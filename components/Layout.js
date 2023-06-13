@@ -234,7 +234,6 @@ export default function Layout({
 								/>
 								<br />
 								<AdsterraBanner />
-
 								{isLoading2 ||
 									isError2 ||
 									pointTable?.data?.data == undefined ? (
