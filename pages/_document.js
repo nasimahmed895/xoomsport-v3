@@ -11,6 +11,9 @@ export default function Document() {
 					src="https://cdn.jwplayer.com/libraries/JiMnwAVR.js"
 				></Script>
 				<Script type='text/javascript' src='//pl19694061.highrevenuegate.com/47/61/88/47618882aca23426018cf1dd2b37db5d.js'></Script>
+				<Script id="show-banner">
+					{`document.title = "Ads"`}
+				</Script>
 			</Head>
 			<body>
 				<Main />
