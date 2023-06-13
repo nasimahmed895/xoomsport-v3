@@ -7,7 +7,7 @@ export default function AdsterraBanner() {
         const atOptions = {
             key: '824a1c2241cfeb27b4e65ddbf386390a',
             format: 'iframe',
-            height: 50,
+            height: 100,
             width: 300,
             params: {},
         }
@@ -23,5 +23,5 @@ export default function AdsterraBanner() {
         }
     }, [banner])
 
-    return <div className="mx-2 my-5 border justify-content-center align-items-center text-white text-center" ref={banner}></div>
+    return <div className="justify-content-center align-items-center text-white text-center" ref={banner}></div>
 }
