@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useQuery } from "react-query";
 // import { ReactQueryDevtools } from "react-query/devtools";
+import Script from "next/script";
 import { ToastContainer, toast } from "react-toastify";
 import ChangePasswordModalForm from "./auth/ChangePasswordModalForm";
 import ForgetPasswordModalForm from "./auth/ForgetPasswordModalForm";
@@ -231,7 +232,11 @@ export default function Layout({
 									trendingNewsPost={trendingNewsPost}
 								/>
 								<br />
-								<a href="https://www.highrevenuegate.com/gtkxb6dc1?key=c836ecdf6d651783b8d7e1b50ca1bae1"></a>
+								<Script
+									type="text/javascript"
+									src="//pl19706691.highrevenuegate.com/37/89/0a/37890a5064b6650b9adfff77672a0fc4.js"
+								></Script>
+
 								{isLoading2 ||
 									isError2 ||
 									pointTable?.data?.data == undefined ? (
