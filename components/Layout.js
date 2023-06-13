@@ -230,7 +230,6 @@ export default function Layout({
 									trendingNewsPost={trendingNewsPost}
 								/>
 								<br />
-								<Script type='text/javascript' src='//pl19713846.highrevenuegate.com/26/f9/50/26f950761cf21432e5082e438a43b6ea.js'></Script>
 								{isLoading2 ||
 									isError2 ||
 									pointTable?.data?.data == undefined ? (
@@ -296,8 +295,8 @@ export default function Layout({
 				{/* <ReactQueryDevtools initialIsOpen={false} position="bottom-right" /> */}
 				<ToastContainer position="bottom-right" />
 			</Container>
-			<Script async="async" data-cfasync="false" src="//pl19713840.highrevenuegate.com/74bc4127bf5135e43a6b256c0fb77e08/invoke.js"></Script>
-			<div id="container-74bc4127bf5135e43a6b256c0fb77e08"></div>
+
+
 			<Footer />
 		</>
 	);
