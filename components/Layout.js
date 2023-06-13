@@ -234,7 +234,6 @@ export default function Layout({
 									trendingNewsPost={trendingNewsPost}
 								/>
 								<br />
-								<AdsterraBanner />
 								{isLoading2 ||
 									isError2 ||
 									pointTable?.data?.data == undefined ? (
@@ -303,12 +302,10 @@ export default function Layout({
 			{/* Social Bar s */}
 			<Script type='text/javascript' src='//pl19713846.highrevenuegate.com/26/f9/50/26f950761cf21432e5082e438a43b6ea.js'></Script>
 			{/* Social Bar s */}
-			<script async="async" data-cfasync="false" src="//pl19713840.highrevenuegate.com/74bc4127bf5135e43a6b256c0fb77e089/invoke.js"></script>
-			<div id="container-74bc4127bf5135e43a6b256c0fb77e089"></div>
 
 			<Footer />
 
-
+			<AdsterraBanner />
 		</>
 	);
 }
