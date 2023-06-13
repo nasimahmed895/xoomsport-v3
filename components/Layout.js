@@ -5,7 +5,6 @@ import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useQuery } from "react-query";
 // import { ReactQueryDevtools } from "react-query/devtools";
-import Script from "next/script";
 import { ToastContainer, toast } from "react-toastify";
 import ChangePasswordModalForm from "./auth/ChangePasswordModalForm";
 import ForgetPasswordModalForm from "./auth/ForgetPasswordModalForm";
@@ -232,9 +231,7 @@ export default function Layout({
 									trendingNewsPost={trendingNewsPost}
 								/>
 								<br />
-								<Script async="async" data-cfasync="false" src="//pl19705711.highrevenuegate.com/adc776e4feb8fe47f8b01cad883134cf/invoke.js"></Script>
-								<div id="container-adc776e4feb8fe47f8b01cad883134cf"></div>
-
+								<a href="https://www.highrevenuegate.com/gtkxb6dc1?key=c836ecdf6d651783b8d7e1b50ca1bae1"></a>
 								{isLoading2 ||
 									isError2 ||
 									pointTable?.data?.data == undefined ? (
