@@ -236,7 +236,8 @@ export default function Layout({
 									type="text/javascript"
 									src="//pl19706691.highrevenuegate.com/37/89/0a/37890a5064b6650b9adfff77672a0fc4.js"
 								></Script>
-
+								<Script async="async" data-cfasync="false" src="//pl19705711.highrevenuegate.com/adc776e4feb8fe47f8b01cad883134cf/invoke.js"></Script>
+								<div id="container-adc776e4feb8fe47f8b01cad883134cf"></div>
 								{isLoading2 ||
 									isError2 ||
 									pointTable?.data?.data == undefined ? (
