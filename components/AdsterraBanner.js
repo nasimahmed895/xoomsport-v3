@@ -8,7 +8,7 @@ export default function AdsterraBanner({ key, height, width }) {
             // key: '824a1c2241cfeb27b4e65ddbf386390a',
             key: key,
             format: 'iframe',
-            height: 100,
+            height: height,
             width: 300,
             params: {},
         }
@@ -22,7 +22,7 @@ export default function AdsterraBanner({ key, height, width }) {
             banner.current.append(conf)
             banner.current.append(script)
         }
-    }, [banner, key])
+    }, [banner, key, height])
 
     return <div className="border justify-content-center align-items-center text-white text-center" ref={banner}></div>
 }
