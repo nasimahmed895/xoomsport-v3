@@ -5,10 +5,10 @@ export default function AdsterraBanner({ key, height, width }) {
 
     useEffect(() => {
         const atOptions = {
-            key: key,
+            key: '824a1c2241cfeb27b4e65ddbf386390a',
             format: 'iframe',
-            height: height,
-            width: width,
+            height: 100,
+            width: 300,
             params: {},
         }
         if (banner.current && !banner.current.firstChild) {
@@ -21,7 +21,7 @@ export default function AdsterraBanner({ key, height, width }) {
             banner.current.append(conf)
             banner.current.append(script)
         }
-    }, [banner, key, height, width])
+    }, [banner])
 
-    return <div className="justify-content-center align-items-center text-white text-center" ref={banner}></div>
+    return <div className="border justify-content-center align-items-center text-white text-center" ref={banner}></div>
 }
