@@ -233,6 +233,8 @@ export default function Layout({
 									trendingNewsPost={trendingNewsPost}
 								/>
 								<br />
+								<AdsterraBanner />
+
 								{isLoading2 ||
 									isError2 ||
 									pointTable?.data?.data == undefined ? (
@@ -304,7 +306,6 @@ export default function Layout({
 
 			<Footer />
 
-			<AdsterraBanner />
 		</>
 	);
 }
