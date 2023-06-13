@@ -112,9 +112,16 @@ export default function PremiumPlansModal({
 					<div className={styles.premium_heading__right}>
 						<div className={styles.rounded_heading}>GET LIFETIME $99.99</div>
 					</div>
-				</div>
-				<div style={{ background: "#fff" }}>
-					<div className={styles.triangle}></div>
+					{/* <div className="d-flex justify-content-center">
+						<div>
+							<Image
+								src="/monthly_ball.png"
+								width={180}
+								height={180}
+								alt="Logo"
+							/>
+						</div>
+					</div> */}
 				</div>
 
 				<div className={styles.body__content}>

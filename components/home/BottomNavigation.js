@@ -15,7 +15,6 @@ export default function BottomNavigation({
 }) {
 	const [showSidNavbar, setshowSidNavbar] = useState(false);
 	const { setUser, setUserToken } = useAuthContext();
-	const navIcon = useRef(null);
 	const navSideBar = useRef(null);
 	const router = useRouter();
 	let userInformation = "";
@@ -204,7 +203,7 @@ export default function BottomNavigation({
 					<MdNotes
 						className={styles.nav__img}
 						onClick={handleNav}
-						ref={navIcon}
+						// ref={navIcon}
 					/>
 				</nav>
 			</header>

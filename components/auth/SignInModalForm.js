@@ -3,7 +3,11 @@ import styles from "@/styles/Auth.module.css";
 import { xoomSportUrl } from "@/utils/api/getAxios";
 import { auth } from "@/utils/firebase/firebase";
 import getRandomStr from "@/utils/getRandomStr";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+	GoogleAuthProvider,
+	OAuthProvider,
+	signInWithPopup,
+} from "firebase/auth";
 import Cookies from "js-cookie";
 import { useRef, useState } from "react";
 import { Button, Form, InputGroup, Modal } from "react-bootstrap";
@@ -31,17 +35,63 @@ export default function SignInModalForm({
 	const { setUserToken, setUser, getUser } = useAuthContext();
 
 	const googleAuth = new GoogleAuthProvider();
+	const appleAuth = new OAuthProvider("apple.com");
+
+	const appleLoginHandler = async () => {
+		try {
+			const result = await signInWithPopup(auth, appleAuth);
+			console.log(result?.user);
+			const payload = {
+				name: result?.user?.displayName,
+				email: result?.user?.email,
+				password: result?.user?.uid,
+				password_confirmation: result?.user?.uid,
+				device_token: result?.user?.accessToken.slice(0, 10),
+				provider: "apple",
+			};
+
+			await xoomSportUrl.post("/api/v1/signup", payload).then((res) => {
+				if (res?.data?.status) {
+					const { access_token } = res?.data;
+
+					Cookies.set("userToken", access_token, { secure: true });
+					setUserToken(access_token);
+					getUser();
+
+					toast.success("Sign In Successfully!", {
+						theme: "dark",
+					});
+
+					setAuthenticate(true);
+					setEmail("");
+					setPassword("");
+					setError("");
+					setSignInBtn(false);
+					handleSignInClose();
+				} else {
+					setError(res?.data?.message);
+					setUser(null);
+					setUserToken(null);
+					setSignInBtn(false);
+				}
+			});
+		} catch (err) {
+			console.log(err);
+			setUser(null);
+			setUserToken(null);
+		}
+	};
 
 	const googleLoginHandler = async () => {
 		try {
 			const result = await signInWithPopup(auth, googleAuth);
 
 			const payload = {
-				name: result.user.displayName,
-				email: result.user.email,
-				password: result.user.uid,
-				password_confirmation: result.user.uid,
-				device_token: result.user.accessToken.slice(0, 10),
+				name: result?.user?.displayName,
+				email: result?.user?.email,
+				password: result?.user?.uid,
+				password_confirmation: result?.user?.uid,
+				device_token: result?.user?.accessToken.slice(0, 10),
 				provider: "google",
 			};
 
@@ -276,7 +326,7 @@ export default function SignInModalForm({
 				<Button
 					variant="dark w-100 mt-3 d-flex justify-content-center align-items-center"
 					disabled={appleBtn}
-					onClick={(e) => signOutHandler(e)}
+					onClick={appleLoginHandler}
 				>
 					<FaApple className={styles.apple_icon} /> Continue with Apple
 				</Button>

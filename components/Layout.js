@@ -4,7 +4,7 @@ import Head from "next/head";
 import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useQuery } from "react-query";
-// import { ReactQueryDevtools } from "react-query/devtools";
+// import { ReactQueryDevtoolds } from "react-query/devtools";
 import Script from "next/script";
 import { ToastContainer, toast } from "react-toastify";
 import AdsterraBanner from "./AdsterraBanner";
@@ -165,12 +165,7 @@ export default function Layout({
 			/>
 			{/* -------- Main Content -------- */}
 
-
 			<Container className={`${styles.main__container}`}>
-				{/* Native Banner */}
-				<Script async="async" data-cfasync="false" src="//pl19705711.highrevenuegate.com/adc776e4feb8fe47f8b01cad883134cf/invoke.js"></Script>
-				<div id="container-adc776e4feb8fe47f8b01cad883134cf"></div>
-				{/* Native Banner */}
 				<Row>
 					{fullScreen ? (
 						<Col
@@ -190,8 +185,8 @@ export default function Layout({
 								className={`mb-4 ${styles.left_column}`}
 							>
 								{isLoading1 ||
-									isError1 ||
-									topLeagueList?.data?.data == undefined ? (
+								isError1 ||
+								topLeagueList?.data?.data == undefined ? (
 									<LeagueListShimmer />
 								) : (
 									<>
@@ -202,6 +197,7 @@ export default function Layout({
 										<br />
 									</>
 								)}
+								<AdsterraBanner />
 
 								{isLoading || isError || allLeagues?.data?.data == undefined ? (
 									<LeagueListShimmer />
@@ -234,9 +230,13 @@ export default function Layout({
 								/>
 								<br />
 								<AdsterraBanner />
+								<Script
+									type="text/javascript"
+									src="//pl19706691.highrevenuegate.com/37/89/0a/37890a5064b6650b9adfff77672a0fc4.js"
+								></Script>
 								{isLoading2 ||
-									isError2 ||
-									pointTable?.data?.data == undefined ? (
+								isError2 ||
+								pointTable?.data?.data == undefined ? (
 									<ShortLeagueTableShimmer />
 								) : (
 									<LeagueTable pointTableData={pointTable?.data?.data} />
@@ -299,12 +299,18 @@ export default function Layout({
 				{/* <ReactQueryDevtools initialIsOpen={false} position="bottom-right" /> */}
 				<ToastContainer position="bottom-right" />
 			</Container>
-			{/* Social Bar s */}
-			<Script type='text/javascript' src='//pl19713846.highrevenuegate.com/26/f9/50/26f950761cf21432e5082e438a43b6ea.js'></Script>
-			{/* Social Bar s */}
+
+			<div className="text-center">
+				<a
+					className="btn btn-primary"
+					href="https://www.highrevenuegate.com/gtkxb6dc1?key=c836ecdf6d651783b8d7e1b50ca1bae1"
+					target="_blank"
+				>
+					Ads Link Test
+				</a>
+			</div>
 
 			<Footer />
-
 		</>
 	);
 }

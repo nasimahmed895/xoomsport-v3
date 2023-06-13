@@ -9,6 +9,7 @@ import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Script from "next/script";
 import { useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { HiArrowLeft } from "react-icons/hi";
@@ -50,8 +51,6 @@ export default function WatchDetails({
 			liveMatches_all.push(liveMatches.data[index]);
 		}
 	}
-
-	console.log(liveMatches_all);
 
 	function liveMatchesView() {
 		let unix_timestamp = liveMatches_id[0]?.match_time;
@@ -149,8 +148,15 @@ export default function WatchDetails({
 						/>
 					</div>
 				</div>
+
 				<div className="live_video_section">
 					{liveMatchesView()}
+					<Script
+						async="async"
+						data-cfasync="false"
+						src="//pl19705711.highrevenuegate.com/adc776e4feb8fe47f8b01cad883134cf/invoke.js"
+					></Script>
+					<div id="container-adc776e4feb8fe47f8b01cad883134cf"></div>
 					{filtered.length == 0 ? (
 						""
 					) : (

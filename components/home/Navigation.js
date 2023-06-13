@@ -166,7 +166,9 @@ export default function Navigation({
 																	days left{" "}
 																</span>
 															) : (
-																<></>
+																<span className="text-muted">
+																	Never Ending Package
+																</span>
 															)}
 														</>
 													) : (
@@ -225,4 +227,8 @@ export default function Navigation({
 			</Navbar>
 		</>
 	);
+}
+{
+	{
+	}
 }

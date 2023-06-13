@@ -24,6 +24,7 @@
 
 .top__header {
 	display: flex;
+	justify-content: center;
 	padding: 0px 16px 16px 16px;
 }
 
