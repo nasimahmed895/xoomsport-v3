@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-export default function AdsterraBanner({ key, height, width }) {
+export default function AdsterraBanner() {
     const banner = useRef()
 
     useEffect(() => {
@@ -21,7 +21,7 @@ export default function AdsterraBanner({ key, height, width }) {
             banner.current.append(conf)
             banner.current.append(script)
         }
-    }, [banner, key, height])
+    }, [banner])
 
     return <div className="border justify-content-center align-items-center text-white text-center" ref={banner}></div>
 }

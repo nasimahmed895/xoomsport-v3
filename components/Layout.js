@@ -233,7 +233,7 @@ export default function Layout({
 									trendingNewsPost={trendingNewsPost}
 								/>
 								<br />
-								<AdsterraBanner key='824a1c2241cfeb27b4e65ddbf386390a' height={100} width={300} />
+								<AdsterraBanner />
 
 								{isLoading2 ||
 									isError2 ||
