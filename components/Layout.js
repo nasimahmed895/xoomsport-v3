@@ -5,7 +5,6 @@ import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useQuery } from "react-query";
 // import { ReactQueryDevtools } from "react-query/devtools";
-import Image from "next/image";
 import Script from "next/script";
 import { ToastContainer, toast } from "react-toastify";
 import ChangePasswordModalForm from "./auth/ChangePasswordModalForm";
@@ -233,7 +232,9 @@ export default function Layout({
 									trendingNewsPost={trendingNewsPost}
 								/>
 								<br />
-								<a href=""><Image alt="banner" width={100} height={100} src="https://landings-cdn.adsterratech.com/referralBanners/png/80%20x%2030%20px.png" /></a>
+								<Script async="async" data-cfasync="false" src="//pl19705711.highrevenuegate.com/adc776e4feb8fe47f8b01cad883134cf/invoke.js"></Script>
+								<div id="container-adc776e4feb8fe47f8b01cad883134cf"></div>
+
 								{isLoading2 ||
 									isError2 ||
 									pointTable?.data?.data == undefined ? (
