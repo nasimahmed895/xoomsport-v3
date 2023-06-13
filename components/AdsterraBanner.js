@@ -5,7 +5,8 @@ export default function AdsterraBanner({ key, height, width }) {
 
     useEffect(() => {
         const atOptions = {
-            key: '824a1c2241cfeb27b4e65ddbf386390a',
+            // key: '824a1c2241cfeb27b4e65ddbf386390a',
+            key: key,
             format: 'iframe',
             height: 100,
             width: 300,
@@ -21,7 +22,7 @@ export default function AdsterraBanner({ key, height, width }) {
             banner.current.append(conf)
             banner.current.append(script)
         }
-    }, [banner])
+    }, [banner, key])
 
     return <div className="border justify-content-center align-items-center text-white text-center" ref={banner}></div>
 }
