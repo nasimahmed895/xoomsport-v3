@@ -22,7 +22,6 @@ import TrendingNews from "./home/TrendingNews";
 import LeagueListShimmer from "./shimmer/home/LeagueListShimmer";
 import ShortLeagueTableShimmer from "./shimmer/home/ShortLeagueTableShimmer";
 import PremiumPlansModal from "./subscription/PremiumPlansModal";
-
 export default function Layout({
 	children,
 	fullScreen,
