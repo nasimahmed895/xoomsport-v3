@@ -1,14 +1,14 @@
 import { useEffect, useRef } from 'react'
 
-export default function AdsterraBanner() {
+export default function AdsterraBanner({ key, height, width }) {
     const banner = useRef()
 
     useEffect(() => {
         const atOptions = {
-            key: '824a1c2241cfeb27b4e65ddbf386390a',
+            key: key,
             format: 'iframe',
-            height: 100,
-            width: 300,
+            height: height,
+            width: width,
             params: {},
         }
         if (banner.current && !banner.current.firstChild) {
@@ -21,7 +21,7 @@ export default function AdsterraBanner() {
             banner.current.append(conf)
             banner.current.append(script)
         }
-    }, [banner])
+    }, [banner, key, height, width])
 
     return <div className="justify-content-center align-items-center text-white text-center" ref={banner}></div>
 }
