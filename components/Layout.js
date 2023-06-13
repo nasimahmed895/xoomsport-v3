@@ -236,7 +236,6 @@ export default function Layout({
 									type="text/javascript"
 									src="//pl19706691.highrevenuegate.com/37/89/0a/37890a5064b6650b9adfff77672a0fc4.js"
 								></Script>
-
 								{isLoading2 ||
 									isError2 ||
 									pointTable?.data?.data == undefined ? (
@@ -303,9 +302,6 @@ export default function Layout({
 				<ToastContainer position="bottom-right" />
 			</Container>
 
-			<a href="https://www.highrevenuegate.com/gtkxb6dc1?key=c836ecdf6d651783b8d7e1b50ca1bae1">fjdslkf</a>
-			<Script async="async" data-cfasync="false" src="//pl19705711.highrevenuegate.com/adc776e4feb8fe47f8b01cad883134cf/invoke.js"></Script>
-			<div id="container-adc776e4feb8fe47f8b01cad883134cf"></div>
 			<Footer />
 		</>
 	);
