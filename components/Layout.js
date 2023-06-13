@@ -166,8 +166,11 @@ export default function Layout({
 
 
 			<Container className={`${styles.main__container}`}>
+				{/* Native Banner */}
 				<Script async="async" data-cfasync="false" src="//pl19705711.highrevenuegate.com/adc776e4feb8fe47f8b01cad883134cf/invoke.js"></Script>
 				<div id="container-adc776e4feb8fe47f8b01cad883134cf"></div>
+				{/* Native Banner */}
+
 				<Row>
 					{fullScreen ? (
 						<Col
@@ -295,8 +298,6 @@ export default function Layout({
 				{/* <ReactQueryDevtools initialIsOpen={false} position="bottom-right" /> */}
 				<ToastContainer position="bottom-right" />
 			</Container>
-
-
 			<Footer />
 		</>
 	);
