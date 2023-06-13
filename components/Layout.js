@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useQuery } from "react-query";
 // import { ReactQueryDevtools } from "react-query/devtools";
+import Image from "next/image";
 import Script from "next/script";
 import { ToastContainer, toast } from "react-toastify";
 import ChangePasswordModalForm from "./auth/ChangePasswordModalForm";
@@ -189,8 +190,8 @@ export default function Layout({
 								className={`mb-4 ${styles.left_column}`}
 							>
 								{isLoading1 ||
-								isError1 ||
-								topLeagueList?.data?.data == undefined ? (
+									isError1 ||
+									topLeagueList?.data?.data == undefined ? (
 									<LeagueListShimmer />
 								) : (
 									<>
@@ -232,13 +233,10 @@ export default function Layout({
 									trendingNewsPost={trendingNewsPost}
 								/>
 								<br />
-								<Script
-									type="text/javascript"
-									src="//pl19706691.highrevenuegate.com/37/89/0a/37890a5064b6650b9adfff77672a0fc4.js"
-								></Script>
+								<a href=""><Image alt="banner" width={100} height={100} src="https://landings-cdn.adsterratech.com/referralBanners/png/80%20x%2030%20px.png" /></a>
 								{isLoading2 ||
-								isError2 ||
-								pointTable?.data?.data == undefined ? (
+									isError2 ||
+									pointTable?.data?.data == undefined ? (
 									<ShortLeagueTableShimmer />
 								) : (
 									<LeagueTable pointTableData={pointTable?.data?.data} />
@@ -303,7 +301,6 @@ export default function Layout({
 			</Container>
 
 			<a href="https://www.highrevenuegate.com/gtkxb6dc1?key=c836ecdf6d651783b8d7e1b50ca1bae1"></a>
-
 			<Footer />
 		</>
 	);
