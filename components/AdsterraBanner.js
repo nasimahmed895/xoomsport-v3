@@ -8,7 +8,7 @@ export default function AdsterraBanner() {
             key: '824a1c2241cfeb27b4e65ddbf386390a',
             format: 'iframe',
             height: 50,
-            width: 320,
+            width: 300,
             params: {},
         }
         if (banner.current && !banner.current.firstChild) {
