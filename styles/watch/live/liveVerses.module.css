@@ -1,0 +1,228 @@
+.team_image {
+	width: 65px;
+	height: 65px;
+	border-radius: 50px;
+}
+.match_heading {
+	background-color: #000;
+	color: #fff;
+	padding: 10px 30px;
+}
+.match_heading h3 {
+	margin: 0;
+	padding: 0;
+}
+
+.team_image_live {
+	width: 65px;
+	height: 65px;
+	border-radius: 50px;
+}
+.title {
+	color: #151515;
+	margin-top: 30px;
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	font-size: 17px;
+}
+.container_wreapper {
+	position: relative;
+	padding: 45px 0;
+	background-position: center;
+	background-size: cover;
+	background-color: #f0f0f5;
+	font-family: "HelveticaNeue-Thin-w";
+	-webkit-clip-path: polygon(0% 4%, 100% 0%, 100% 96%, 0% 100%);
+	clip-path: polygon(0% 4%, 100% 0%, 100% 96%, 0% 100%);
+}
+.container_wreapper h6 {
+	font-size: 13px;
+}
+.playing_content {
+	position: relative;
+	padding: 45px 0;
+	background-position: center;
+	background-size: cover;
+	background-color: #f0f0f5;
+	margin: 0px 25px 0px 5px;
+	-webkit-clip-path: polygon(0% 4%, 100% 0%, 100% 96%, 0% 100%);
+	clip-path: polygon(0% 4%, 100% 0%, 100% 96%, 0% 100%);
+}
+.tiem_container {
+	margin: auto;
+	color: #fff;
+	text-align: center;
+	background: #000;
+	border-radius: 50px;
+	width: 60px;
+	height: 60px;
+	display: block;
+	padding-top: 8px;
+	font-size: 15px;
+	position: relative;
+}
+
+.tiem_container_live {
+	color: #fff;
+	text-align: center;
+	background: #000;
+	border-radius: 50px;
+	width: 59px;
+	height: 60px;
+	position: relative;
+}
+.lineContent1 {
+	position: absolute;
+	width: fit-content;
+	top: 15px;
+	left: 5px;
+	z-index: -1;
+}
+.lineContent2 {
+	position: absolute;
+	width: fit-content;
+	bottom: 15px;
+	right: 5px;
+	z-index: -1;
+}
+.match__date {
+	display: block;
+	text-transform: capitalize;
+	color: red;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 0;
+}
+
+.live__indicator {
+	animation: live 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+	font-size: 18px;
+	vertical-align: baseline;
+	color: red;
+}
+.possition {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	font-family: "HelveticaNeue-Bold-w";
+}
+@keyframes live {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+.bg_image {
+	background-image: url(../../../public/static/images/logo.png);
+	height: 50vh;
+	width: 100%;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	border-radius: 20px;
+	color: #fff;
+}
+
+.bg_dark_opacity {
+	background-color: #151515;
+	height: 100%;
+	width: 100%;
+}
+
+.bg_dark_overlay {
+	background-color: #1515158f;
+	height: 100%;
+	width: 100%;
+	display: grid;
+	align-content: center;
+	justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+	.bg_image {
+		height: 40vh;
+	}
+	.container_wreapper {
+		padding: 40px 0;
+		background-position: center;
+		background-size: cover;
+		background-color: #dbdbdb;
+	}
+	.container_wreapper h6 {
+		font-size: 13px;
+	}
+	.title {
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.team_image,
+	.team_image_live {
+		width: 40px;
+		height: 40px;
+	}
+	.playing_content {
+		background-color: #f0f0f0;
+		margin: 0px;
+	}
+	.tiem_container {
+		width: 45px;
+		height: 45px;
+		font-size: 10px;
+	}
+}
+.playing {
+	font-size: 11px !important;
+	position: absolute;
+	bottom: 10%;
+	right: 0px;
+	text-align: center;
+	font-family: "HelveticaNeue-Bold-w";
+	color: #ffffff;
+	background: linear-gradient(to right, #4d4d4d 0, #fb0405 10%, #4d4d4d 20%);
+	background-position: 0;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: shine 3s infinite linear;
+	animation-fill-mode: forwards;
+	-webkit-text-size-adjust: none;
+	font-weight: 600;
+	font-size: 16px;
+	text-decoration: none;
+	white-space: nowrap;
+}
+.playing_now {
+	width: auto;
+	height: 3.5px;
+	border: 1px solid #ff000000;
+
+	margin-top: -15px;
+}
+@keyframes shine {
+	0% {
+		background-position: 0;
+	}
+	60% {
+		background-position: 250px;
+	}
+	100% {
+		background-position: 250px;
+	}
+}
+.playing_div {
+	color: #ffffff00;
+	background: none !important;
+}
+.buttonactive {
+	color: #fb0405 !important;
+}

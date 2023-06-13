@@ -1,0 +1,66 @@
+.shine {
+  background: #d0d3d5;
+  background-image: linear-gradient(
+    to right,
+    #dadee1 0%,
+    #d0d3d5 20%,
+    #d0d3d5 40%,
+    #d0d3d5 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+  display: inline-block;
+  position: relative;
+
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeholderShimmer;
+  animation-timing-function: linear;
+}
+
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -100%;
+  }
+
+  100% {
+    background-position: 500%;
+  }
+}
+
+.hadding {
+  height: 20px;
+}
+.post {
+  width: 30px;
+  height: 15px;
+  border-radius: 2px;
+}
+.logo {
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+.name {
+  width: 40px;
+  height: 15px;
+  border-radius: 2px;
+}
+.tiem {
+  width: 50px;
+  height: 15px;
+  border-radius: 2px;
+}
+.content {
+  width: fit-content;
+  text-align: center;
+  margin-right: 30px;
+}
+.scor {
+  width: 70px;
+  height: 40px;
+  display: block;
+  margin-bottom: 5px;
+}

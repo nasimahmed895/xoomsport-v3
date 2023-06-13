@@ -1,0 +1,27 @@
+.favorite__heading {
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.favorite__heading_content {
+	padding: 20px 0px;
+	background-color: #151515;
+}
+
+.favorite_tab__link {
+	color: #ffffff;
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	text-transform: uppercase;
+	transform: rotate(0deg) !important;
+}
+
+.favorite_tab__link:focus,
+.favorite_tab__link:hover {
+	color: #fb0405 !important;
+}
+
+@media screen and (max-width: 991px) {
+	.favorite__heading_content {
+		margin-top: 49px;
+	}
+}

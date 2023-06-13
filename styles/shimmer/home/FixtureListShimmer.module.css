@@ -1,0 +1,89 @@
+.shine {
+  background: #d0d3d5;
+  background-image: linear-gradient(
+    to right,
+    #dadee1 0%,
+    #d0d3d5 20%,
+    #d0d3d5 40%,
+    #d0d3d5 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+  display: inline-block;
+  position: relative;
+
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeholderShimmer;
+  animation-timing-function: linear;
+}
+
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.league_title__square {
+  height: 30px;
+  width: 30%;
+  cursor: wait;
+  margin-top: 20px;
+}
+
+.team_container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.team_logo__box {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  cursor: wait;
+}
+
+.team_title__square {
+  height: 30px;
+  width: 200px;
+  cursor: wait;
+  margin-left: 15px;
+}
+
+.timestamp__box {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  cursor: wait;
+  margin: 0px 20px;
+}
+
+@media screen and (max-width: 992px) {
+  .shimmer__wrapper {
+    padding: 0px 10px;
+  }
+
+  .league_title__square {
+    height: 22px;
+  }
+
+  .team_title__square {
+    height: 20px;
+  }
+
+  .team_logo__box {
+    height: 27px;
+    width: 60px;
+  }
+
+  .timestamp__box {
+    height: 50px;
+    width: 110px;
+  }
+}

@@ -1,0 +1,96 @@
+.league__logo {
+	border-radius: 50%;
+	padding: 2px;
+	background-color: #ffffff;
+}
+
+.player_details__heading {
+	display: flex;
+	align-items: center;
+	padding: 40px 20px 10px 20px;
+	background-color: #151515;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.league_details__content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	border-bottom: 1px solid #ffffff30;
+	padding-bottom: 15px;
+}
+
+.league_details__text {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.player_details_tab__heading {
+	display: flex;
+	align-items: center;
+	padding: 10px 10px 20px 10px;
+	background-color: #151515;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.league__logo {
+	border-radius: 50%;
+	border: 1px solid #151515;
+}
+
+.league__title {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-left: 15px;
+	margin-bottom: 0px;
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #ffffff;
+	display: block;
+}
+
+.league__country {
+	display: block;
+	font-size: 12px;
+	margin-left: 15px;
+}
+
+.league_details_tab__link {
+	color: #ffffff;
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	text-transform: uppercase;
+	padding: 8px 6px;
+}
+
+.league_details_tab__link:focus,
+.league_details_tab__link:hover {
+	color: #fb0405 !important;
+}
+.container_clip_path_web_content1 {
+	-webkit-clip-path: polygon(0% 6%, 100% 0%, 100% 94%, 0% 100%);
+	clip-path: polygon(0% 6%, 100% 0%, 100% 94%, 0% 100%);
+}
+@media screen and (max-width: 992px) {
+	.player_details__heading {
+		padding: 10px 25px;
+	}
+
+	.player_details_tab__heading {
+		display: flex;
+		flex-wrap: nowrap;
+		text-transform: uppercase;
+		overflow: scroll;
+	}
+
+	.player_details__heading {
+		margin-top: 50px;
+		padding-top: 35px;
+	}
+
+	.league_details_tab__link {
+		font-size: 13px;
+	}
+}

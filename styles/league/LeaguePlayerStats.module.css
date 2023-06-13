@@ -1,0 +1,91 @@
+.league_player_stats {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 15px;
+}
+
+.league__logo {
+	border-radius: 50%;
+	border: 1px solid #151515;
+	height: 35px;
+	width: 35px;
+}
+
+.league__title {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-left: 15px;
+	text-transform: uppercase;
+	font-size: 17px;
+	color: #151515;
+	padding: 10px 0;
+	border-bottom: 1px solid #312c2c;
+}
+
+.league_team_name {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-left: 10px;
+	text-transform: uppercase;
+	font-size: 15px;
+	color: #312c2c;
+}
+
+.league_team__goal {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	text-transform: uppercase;
+	font-size: 15px;
+	color: #312c2c;
+	width: 30px;
+	text-align: center;
+}
+
+.match__not_found {
+	text-align: center;
+}
+
+.match__not_found p {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	text-transform: uppercase;
+}
+
+.curved1 {
+	-webkit-clip-path: polygon(0 0.5%, 100% 0, 100% 99%, 0% 100%);
+	clip-path: polygon(0 0.5%, 100% 0, 100% 99%, 0% 100%);
+	margin-top: -4px;
+}
+.curved2 {
+	-webkit-clip-path: polygon(0 0.5%, 100% 0, 100% 99%, 0% 100%);
+	clip-path: polygon(0 0.5%, 100% 0, 100% 99%, 0% 100%);
+	margin-top: -8px;
+}
+
+.league_player_bg {
+	background-color: #f5f5f5;
+	padding: 10px;
+	-webkit-clip-path: polygon(0 0.2%, 100% 0, 100% 99%, 0% 100%);
+	clip-path: polygon(0 0.2%, 100% 0, 100% 99%, 0% 100%);
+}
+
+.league_player_stats__right {
+	width: 75px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.left {
+	display: flex;
+	align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+	.league__title {
+		font-size: 13px;
+		font-family: "HelveticaNeue-Bold-t", "HelveticaNeue-Bold-w";
+	}
+
+	.league_fixtures_container {
+		width: 100%;
+		margin: 0 auto;
+	}
+}

@@ -1,0 +1,59 @@
+.shine {
+	background: #d0d3d5;
+	background-image: linear-gradient(
+		to right,
+		#dadee1 0%,
+		#d0d3d5 20%,
+		#d0d3d5 40%,
+		#d0d3d5 100%
+	);
+	background-repeat: no-repeat;
+	display: inline-block;
+	position: relative;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-name: placeholderShimmer;
+	animation-timing-function: linear;
+	height: fit-content;
+}
+
+.square {
+	height: 30px;
+	width: 100%;
+	cursor: wait;
+	margin-top: 10px;
+}
+.team_image {
+	height: 30px !important;
+	width: 30px !important;
+	border-radius: 50px;
+}
+.container {
+	width: 5%;
+	height: 15px;
+	display: block;
+	float: left;
+	margin-right: 1%;
+	margin-top: 5px;
+}
+.container:last-child {
+	margin-right: 0;
+	/* width: 10%; */
+}
+.border_table {
+	border-color: inherit;
+	border-style: none;
+	border-width: 0;
+	display: flex;
+	justify-content: space-between;
+}
+@keyframes placeholderShimmer {
+	0% {
+		background-position: -468px 0;
+	}
+
+	100% {
+		background-position: 468px 0;
+	}
+}

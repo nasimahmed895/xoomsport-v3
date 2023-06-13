@@ -1,0 +1,178 @@
+.league_table__heading {
+	background-color: #151515;
+	color: #ffffff;
+	text-transform: uppercase;
+	padding: 12px 0px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.league__list {
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.league__list th {
+	color: #9a9a9a;
+}
+
+.league__list td {
+	border-style: hidden;
+}
+
+.league__item {
+	padding: 0px 0px 8px 15px;
+	display: flex;
+	align-items: center;
+}
+
+.league__logo {
+	border-radius: 50%;
+	padding: 2px;
+	margin-right: 10px;
+	background-color: #ffffff;
+}
+
+.league__logo2 {
+	border-radius: 50%;
+	border: 1px solid #151515;
+}
+
+.team__logo {
+	border-radius: 50%;
+	border: 1px solid #151515;
+	margin-right: 5px;
+}
+
+.league__title {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-left: 10px;
+	text-transform: uppercase;
+	margin-bottom: 0;
+}
+
+.main__table {
+	border-style: none !important;
+	border-color: #0000;
+	font-size: 16px;
+	text-align: center;
+	margin-bottom: 2rem !important;
+}
+
+.main__table th:first-child {
+	text-align: center;
+}
+.main__table td:first-child {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.main__table td:first-child span {
+	font-size: 30px;
+}
+
+.main__table td:first-child {
+	text-align: center;
+}
+
+.main__table th:nth-child(2) {
+	text-align: start;
+}
+
+.main__table td:nth-child(2) {
+	text-align: start;
+}
+
+.match__not_found {
+	text-align: center;
+}
+
+.match__not_found p {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	text-transform: uppercase;
+}
+
+.color__table {
+	margin-left: 30px;
+}
+
+.table_custom {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.league__container {
+	display: none;
+}
+
+.league_details__text {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 15px 30px;
+}
+
+.season_league_details__text {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 15px 30px;
+	cursor: pointer;
+}
+
+.league__country {
+	display: block;
+	font-size: 12px;
+	margin-left: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.8px;
+}
+
+.league_details__wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #f0f0f0;
+	-webkit-clip-path: polygon(0% 8%, 100% 0%, 100% 93%, 0% 100%);
+	clip-path: polygon(0% 8%, 100% 0%, 100% 93%, 0% 100%);
+	margin-top: -8.4px;
+	padding-top: 23px;
+}
+
+.season_list__icon {
+	font-size: 25px;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+.modal__header {
+	background: #151515;
+	color: #ffffff;
+	font-size: 14px;
+}
+
+.modal__title {
+	font-family: "HelveticaNeue-Bold-t", "HelveticaNeue-Bold-w";
+	font-size: 20px;
+}
+
+.modal_cross__btn {
+	font-size: 25px;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 576px) {
+	.table_content {
+		overflow: scroll;
+	}
+	.table_content_wreaper {
+		font-size: 11px;
+	}
+	.team_tabele_content {
+		display: flex;
+		align-items: center;
+	}
+}

@@ -1,0 +1,243 @@
+.league_details__text {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 15px 30px;
+}
+
+.league__title {
+	font-family: "HelveticaNeue-Bold-t", "HelveticaNeue-Bold-w";
+	margin-left: 10px;
+	text-transform: uppercase;
+	margin-bottom: 0;
+}
+
+.team__title {
+	font-family: "HelveticaNeue-Bold-t", "HelveticaNeue-Bold-w";
+	margin-left: 10px;
+	text-transform: uppercase;
+	margin-bottom: 0;
+}
+
+.league__logo {
+	border-radius: 50%;
+	border: 1px solid #151515;
+}
+
+.league__country {
+	display: block;
+	font-size: 12px;
+	margin-left: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.8px;
+}
+
+.league_details__wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.season_list {
+	width: 158px;
+	text-align: center;
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+}
+
+.fixtures__wrapper {
+	position: relative;
+	background-color: #f0f0f0;
+	-webkit-clip-path: polygon(0% 7%, 100% 0%, 100% 93%, 0% 100%);
+	clip-path: polygon(0% 7%, 100% 0%, 100% 93%, 0% 100%);
+	padding: 10px 0;
+}
+
+.fextures_table {
+	width: 100%;
+	margin: 0 auto;
+	height: auto;
+	margin-bottom: 5px;
+}
+
+.league_fixtures_container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.league__status {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-right: 35px;
+	text-transform: uppercase;
+	font-size: 13px;
+	color: #151515;
+	opacity: 50%;
+}
+
+.match__timestamp {
+	font-size: 10px;
+	text-align: center;
+	padding: 4px;
+	background: #151515;
+	color: #ffffff;
+	border-radius: 50%;
+	width: 57px;
+	height: 57px;
+	margin: auto;
+	line-height: 16px;
+	margin-right: 53px;
+}
+
+.match__date {
+	margin-top: 8px;
+	display: block;
+}
+
+.match__time {
+	margin: 0;
+	display: block;
+}
+
+.match__score {
+	margin-top: 16px;
+	display: block;
+	font-size: 16px;
+	font-family: "HelveticaNeue-Bold-t", "HelveticaNeue-Bold-w";
+}
+
+.favorite_icon__design {
+	cursor: pointer;
+	position: absolute;
+	z-index: 0;
+	top: 20%;
+	right: 24%;
+}
+
+.favorite__logo {
+	font-size: 22px;
+}
+
+.goal__rating {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 90%;
+	margin: auto;
+	padding-bottom: 10px;
+}
+
+.goal__icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "HelveticaNeue-Bold-t", "HelveticaNeue-Bold-w";
+}
+
+.goal__icon span {
+	margin-left: 10px;
+}
+
+.rating__wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.minute__status {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-right: 20px;
+}
+
+.minute__status span:nth-child(1) {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+}
+
+.minute__status span:nth-child(2) {
+	font-family: "HelveticaNeue-Bold-t", "HelveticaNeue-Bold-w";
+}
+
+.rating__status {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.rating__status span:nth-child(1) {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+}
+
+.rating__status span:nth-child(2) {
+	font-family: "HelveticaNeue-Bold-t", "HelveticaNeue-Bold-w";
+}
+
+.single_activity__rating {
+	background: #f01717;
+	padding: 0px 20px;
+	color: #ffffff;
+}
+
+.inactive_favorite {
+	display: none;
+}
+
+@media screen and (max-width: 992px) {
+	.league_details__text {
+		padding: 10px 10px;
+	}
+
+	.league__title {
+		font-size: 13px;
+	}
+
+	.team__title {
+		font-size: 10px;
+	}
+
+	.season_list {
+		font-size: 13px;
+	}
+
+	.league_fixtures_container {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.league__status {
+		margin-right: 10px;
+	}
+
+	.match__timestamp {
+		width: 46px;
+		height: 46px;
+	}
+
+	.match__score {
+		margin-top: 11px;
+		font-size: 12px;
+	}
+
+	.favorite_icon__design {
+		top: 14%;
+		right: 1%;
+	}
+
+	.favorite__logo {
+		font-size: 18px;
+	}
+
+	.goal__rating {
+		justify-content: space-between;
+		width: 80%;
+	}
+
+	.rating__wrapper {
+		font-size: 12px;
+	}
+
+	.minute__status {
+		margin-right: 10px;
+	}
+}

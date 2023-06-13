@@ -1,0 +1,163 @@
+.league_details_tab__nav {
+	color: #151515;
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	text-transform: uppercase;
+}
+
+.league_list__wrapper {
+	background-color: #f5f5f5;
+	-webkit-clip-path: polygon(0% 10%, 100% 0%, 100% 82%, 0% 100%);
+	clip-path: polygon(0% 10%, 100% 0%, 100% 82%, 0% 100%);
+	margin-top: -8.3px;
+	padding-top: 23px;
+}
+
+.league__list_nav {
+	justify-content: space-evenly;
+	align-items: center;
+	position: relative;
+	padding: 10px 10px;
+	width: 30%;
+	margin: auto;
+	padding-right: 30px;
+}
+
+.vertical__icon {
+	position: absolute;
+	font-size: 30px;
+	right: 46%;
+}
+
+.up_coming_match__fixture {
+	margin-top: 20px;
+	border-bottom: 1px solid #15151542;
+	width: 75%;
+	margin: auto;
+}
+
+.up_coming_match__date span {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+}
+
+.league__logo {
+	border-radius: 50%;
+	border: 1px solid #151515;
+}
+
+.league__title {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-left: 10px;
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #151515;
+}
+
+.match__timestamp {
+	font-size: 14px;
+	text-align: center;
+	padding: 4px;
+	background: #151515;
+	color: #ffffff;
+	width: 65px;
+	height: 65px;
+	margin: auto;
+	line-height: 20px;
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.match_win__bg {
+	background-color: #0dbe41;
+}
+
+.match_loss__bg {
+	background-color: #f01717;
+}
+
+.match_draw__bg {
+	color: #ffffff;
+	border: 1px solid #151515;
+}
+
+.match__date {
+	margin-top: 8px;
+	display: block;
+}
+
+.match__time {
+	margin: 0;
+	display: block;
+}
+
+.match__score {
+	display: block;
+	font-size: 16px;
+	font-family: "HelveticaNeue-Bold-t", "HelveticaNeue-Bold-w";
+}
+
+.league__status {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #151515;
+	opacity: 50%;
+	margin-right: 10px;
+}
+
+.favorite_icon {
+	font-size: 25px;
+	position: absolute;
+	right: 10px;
+	top: 5%;
+	cursor: pointer;
+}
+
+.inactive_favorite {
+	display: none;
+}
+
+@media screen and (max-width: 991px) {
+	.league__list_nav {
+		width: fit-content;
+	}
+
+	.up_coming_match__fixture {
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.league__list_nav {
+		width: fit-content;
+	}
+
+	.up_coming_match__fixture {
+		width: 95%;
+	}
+
+	.up_coming_match__date {
+		font-size: 13px;
+	}
+
+	.league__logo {
+		width: 25px;
+		height: 25px;
+	}
+
+	.league__status {
+		display: none;
+	}
+
+	.league__title {
+		font-size: 11px;
+		font-family: "HelveticaNeue-Bold-t", "HelveticaNeue-Bold-w";
+	}
+
+	.match__timestamp {
+		width: 50px;
+		height: 50px;
+	}
+}

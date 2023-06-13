@@ -1,0 +1,50 @@
+.shine {
+	background: #d0d3d5;
+	background-image: linear-gradient(
+		to right,
+		#dadee1 0%,
+		#d0d3d5 20%,
+		#d0d3d5 40%,
+		#d0d3d5 100%
+	);
+	background-repeat: no-repeat;
+	background-size: 800px 104px;
+	display: inline-block;
+	position: relative;
+
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-name: placeholderShimmer;
+	animation-timing-function: linear;
+}
+
+.league_table_heading__square {
+	height: 60px;
+	width: 100%;
+	cursor: wait;
+}
+
+.league_table_title__square {
+	height: 20px;
+	width: 100px;
+	cursor: wait;
+	margin-left: 10px;
+}
+
+.box {
+	height: 20px;
+	width: 20px;
+	cursor: wait;
+	border-radius: 3px;
+}
+
+@keyframes placeholderShimmer {
+	0% {
+		background-position: -468px 0;
+	}
+
+	100% {
+		background-position: 468px 0;
+	}
+}

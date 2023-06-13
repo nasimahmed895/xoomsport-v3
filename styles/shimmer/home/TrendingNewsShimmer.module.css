@@ -1,0 +1,64 @@
+.shine {
+	background: #d0d3d5;
+	background-image: linear-gradient(
+		to right,
+		#dadee1 0%,
+		#d0d3d5 20%,
+		#d0d3d5 40%,
+		#d0d3d5 100%
+	);
+	background-repeat: no-repeat;
+	display: inline-block;
+	position: relative;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-name: placeholderShimmer;
+	animation-timing-function: linear;
+	height: fit-content;
+}
+
+.square {
+	height: 60px;
+	width: 100%;
+	cursor: wait;
+}
+.news_image {
+	height: 150px;
+	width: 100%;
+	border-radius: 10px;
+}
+.news_text1 {
+	margin-top: 5px;
+	height: 15px;
+	width: 70%;
+}
+.news_text2 {
+	margin-top: 5px;
+	height: 15px;
+	width: 100%;
+}
+.news_text3 {
+	margin-top: 5px;
+	height: 15px;
+	width: 50%;
+}
+.news_provider {
+	margin-top: 5px;
+	height: 15px;
+	width: 30%;
+}
+.news_date {
+	margin-top: 5px;
+	height: 15px;
+	width: 30%;
+}
+@keyframes placeholderShimmer {
+	0% {
+		background-position: -468px 0;
+	}
+
+	100% {
+		background-position: 468px 0;
+	}
+}

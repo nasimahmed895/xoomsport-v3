@@ -1,0 +1,29 @@
+.video__title {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #151515;
+	letter-spacing: 0.5px;
+}
+
+.single_video__content {
+	padding: 10px 0;
+	background-color: #000;
+	-webkit-clip-path: polygon(0% 5%, 100% 0%, 100% 95%, 0% 100%);
+	clip-path: polygon(0% 5%, 100% 0%, 100% 95%, 0% 100%);
+}
+.single_video__banner {
+	border-top: 0px solid #000;
+	border-bottom: 0px solid #000;
+	width: 100%;
+	height: revert-layer;
+}
+@media screen and (max-width: 575px) {
+	.single_video__banner {
+		height: 110px;
+		object-fit: cover;
+	}
+	.video__title {
+		font-size: 11px;
+	}
+}

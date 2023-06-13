@@ -1,0 +1,133 @@
+.date_picker__container {
+  background-color: #151515;
+  color: #ffffff;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.date_picker__list {
+  transform: rotate(0deg);
+}
+
+.live__btn_on {
+  position: absolute;
+  top: -9px;
+  left: 35px;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #fb0405;
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  transform: rotate(1deg);
+}
+
+.live__btn_off {
+  position: absolute;
+  top: -9px;
+  left: 35px;
+  cursor: pointer;
+  color: #fb0405;
+  background-color: #ffffff;
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  transform: rotate(1deg);
+}
+
+.live_btn_text {
+  font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+  text-transform: uppercase;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.live__indicator {
+  animation: live 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+  font-size: 16px;
+  vertical-align: baseline;
+  color: #fd0000;
+}
+
+@keyframes live {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.3;
+  }
+}
+
+.date_picker__content {
+  width: 100%;
+  padding: 15px 0px 25px 0px;
+}
+
+.date_picker_list__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow-x: auto;
+}
+
+.date_picker_list__wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.date_picker_list__wrapper {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.date_picker__item {
+  font-size: 12px;
+  width: 60px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.date_picker__day {
+  margin: 0;
+  width: 60px;
+  font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+}
+
+.date_picker__month {
+  margin: 0;
+  width: 60px;
+  font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+}
+
+#date_picker__active {
+  color: #fd0000;
+}
+
+.date_picker__icon {
+  padding: 0px 10px;
+}
+
+@media screen and (max-width: 992px) {
+  .date_picker__day {
+    font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+  }
+
+  .date_picker__month {
+    font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+  }
+}
+@media screen and (max-width: 576px) {
+  .live__btn_off {
+    top: -4px;
+  }
+  .live__btn_on {
+    top: -4px;
+  }
+  .date_picker__content {
+    width: 100%;
+    padding: 20px 0px 25px 0px;
+  }
+}

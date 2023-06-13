@@ -1,0 +1,38 @@
+.favorite_team__item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	background-color: #f0f0f0;
+	margin-bottom: 5px;
+}
+
+.league__logo {
+	border-radius: 50%;
+	border: 1px solid #151515;
+}
+
+.league__title {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-left: 10px;
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #151515;
+	display: block;
+}
+
+.league__country {
+	margin-left: 10px;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: #151515;
+}
+
+.favorite__logo {
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.inactive_favorite {
+	display: none;
+}

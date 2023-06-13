@@ -1,0 +1,340 @@
+.up_coming_match__container {
+	background-color: #f5f5f5;
+	padding-bottom: 20px;
+	-webkit-clip-path: polygon(0% 5%, 100% 0%, 100% 93%, 0% 100%);
+	clip-path: polygon(0% 5%, 100% 0%, 100% 93%, 0% 100%);
+	margin-top: -8.4px;
+	padding-top: 23px;
+}
+
+.up_coming_match__heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 30px;
+}
+
+.last_match__heading {
+	margin-top: 30px;
+	padding: 10px 30px;
+}
+
+.up_coming_match__date span {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	font-size: 13px;
+}
+
+.up_coming_match__league span {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+}
+
+.league__logo {
+	border-radius: 50%;
+	border: 1px solid #151515;
+}
+
+.league__logo2 {
+	border-radius: 50%;
+	border: 1px solid #151515;
+	width: 40px;
+	height: 40px;
+}
+
+.league__title {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-left: 10px;
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #151515;
+}
+
+.league__title_table {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-left: 13px;
+	margin-bottom: 0;
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #151515;
+}
+
+.match__timestamp {
+	font-size: 14px;
+	text-align: center;
+	padding: 1px;
+	background: #151515;
+	color: #ffffff;
+	width: 85px;
+	height: 52px;
+	margin: auto;
+	line-height: 18px;
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+}
+
+.match__date {
+	margin-top: 8px;
+	display: block;
+}
+
+.match__time {
+	margin: 0;
+	display: block;
+}
+
+.league__status {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #151515;
+	opacity: 50%;
+	margin-right: 10px;
+}
+
+.favorite_icon {
+	font-size: 25px;
+	cursor: pointer;
+}
+
+.last_match__list {
+	padding: 10px 30px;
+	display: flex;
+	align-items: center;
+}
+
+.last_match__container {
+	border-bottom: 1px solid #15151542;
+	padding-bottom: 20px;
+}
+
+.last_match__score {
+	padding: 15px 30px;
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	color: #ffffff;
+}
+
+.match_win__bg {
+	background-color: #0dbe41;
+}
+
+.match_loss__bg {
+	background-color: #f01717;
+}
+
+.match_draw__bg {
+	color: #151515;
+	border: 1px solid #151515;
+}
+
+.last_match__opponent {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.short__table {
+	margin-top: 30px;
+}
+
+.short_table__heading {
+	padding: 10px 0px;
+	background-color: #f0f0f0;
+}
+
+.main__table {
+	border-style: none !important;
+	border-color: #0000;
+	font-size: 14px;
+	text-align: center;
+	margin-top: 2rem !important;
+}
+
+.main__table th {
+	color: #9a9a9a;
+}
+
+.main__table th:first-child {
+	text-align: center;
+}
+
+.main__table td:first-child {
+	text-align: center;
+}
+
+.main__table th:nth-child(2) {
+	text-align: start;
+}
+
+.main__table td:nth-child(2) {
+	text-align: start;
+}
+
+.team_title {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-left: 30px;
+	font-size: 16px;
+	color: #151515;
+	text-transform: uppercase;
+}
+
+.team__logo {
+	border-radius: 50%;
+	border: 1px solid #151515;
+	margin-right: 10px;
+}
+
+.league_details__text {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin-top: 30px;
+	padding: 0px 30px;
+}
+
+.league__title {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-left: 15px;
+	margin-bottom: 0px;
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #151515;
+	display: block;
+}
+
+.league__country {
+	display: block;
+	font-size: 12px;
+	margin-left: 15px;
+	text-transform: uppercase;
+	letter-spacing: 0.8px;
+}
+
+.team_content_wreapper {
+	display: flex;
+	width: 60%;
+	margin: auto;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.table_team__title {
+	margin-left: 10px;
+}
+
+.content_wreaper_matchess {
+	margin-right: 40px;
+}
+
+.fixtures__wrapper {
+	position: relative;
+	width: 70%;
+	margin: auto;
+}
+
+.favorite_icon__design {
+	cursor: pointer;
+	position: absolute;
+	z-index: 0;
+	top: 16%;
+	right: 0%;
+}
+
+.league_fixtures_container {
+	width: 80%;
+	margin: auto;
+}
+
+@media screen and (max-width: 991px) {
+	.team_content_wreapper {
+		padding: 10px 30px;
+		width: 100%;
+	}
+	.last_match__score {
+		padding: 13px 13px;
+		line-height: 12px;
+		display: flex;
+		flex-wrap: nowrap;
+	}
+
+	.fixtures__wrapper {
+		width: 85%;
+	}
+
+	.league_fixtures_container {
+		width: 75%;
+	}
+}
+
+@media screen and (max-width: 578px) {
+	.fixtures__wrapper {
+		width: 96%;
+	}
+
+	.league_fixtures_container {
+		width: 95%;
+	}
+
+	.content_wreaper_matchess {
+		margin-right: 0px;
+	}
+
+	.last_match__list {
+		justify-content: space-around !important;
+		padding: 0;
+	}
+
+	.up_coming_match__heading {
+		padding: 10px 10px;
+	}
+
+	.team_content_wreapper {
+		padding: 10px 10px;
+		width: 100%;
+	}
+
+	.league__status {
+		display: none;
+	}
+
+	.league__logo {
+		width: 25px;
+		height: 25px;
+	}
+
+	.league__title {
+		font-size: 11px;
+		margin-left: 3px;
+	}
+
+	.match__timestamp {
+		font-size: 12px;
+		width: 75px;
+		height: 45px;
+		line-height: 15px;
+	}
+
+	.last_match__score {
+		padding: 13px 13px;
+		line-height: 12px;
+		display: flex;
+		flex-wrap: nowrap;
+	}
+
+	.last_match {
+		font-size: 15px;
+	}
+
+	.last_match__heading {
+		padding: 10px 15px;
+	}
+
+	.league_details__text {
+		padding: 0 10px;
+	}
+
+	.league__title_table {
+		font-size: 14px;
+		margin-bottom: 0;
+	}
+
+	.table_team__title {
+		font-size: 12px;
+	}
+}

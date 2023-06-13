@@ -1,0 +1,190 @@
+.tab {
+	float: left;
+	background-color: #151515;
+	width: auto;
+	height: inherit;
+	color: #fff;
+	display: grid;
+	justify-content: space-evenly;
+	align-content: center;
+	z-index: 1;
+}
+
+.tab button {
+	display: block;
+	background-color: inherit;
+	color: #f5f5f5;
+	padding: 30px 0 30px 0;
+	width: 100%;
+	border: none;
+	outline: none;
+	text-align: left;
+	cursor: pointer;
+	transition: 0.3s;
+	font-size: 17px;
+	transform: rotate(-90deg);
+	background-color: #15151500 !important;
+	display: grid;
+	justify-items: center;
+}
+
+.tab button:hover {
+	background-color: #ddd;
+}
+
+.tab button.active {
+	background-color: #ccc;
+}
+
+.tabcontent {
+	float: left;
+	padding: 0px 12px;
+	border: 1px solid #ccc;
+	width: 70%;
+	border-left: none;
+	height: 300px;
+}
+
+.boy_content {
+	background-color: #151515;
+	height: inherit;
+	color: #151515;
+	width: 100%;
+}
+
+.logo_image {
+	width: 170px;
+	height: 70px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+.content1 {
+	background-color: #fff;
+	border: 6px solid #fff;
+	-webkit-clip-path: polygon(0% 5%, 100% 0%, 100% 95%, 0% 100%);
+	clip-path: polygon(0% 5%, 100% 0%, 100% 95%, 0% 100%);
+}
+.content2 {
+	background-color: #fff;
+	border: 6px solid #fff;
+	-webkit-clip-path: polygon(0% 4%, 100% 0%, 100% 95%, 0% 100%);
+	clip-path: polygon(0% 4.5%, 100% 0%, 100% 95%, 0% 100%);
+}
+
+.signin_logo {
+	width: 200px;
+	height: 100px;
+	display: flex;
+	margin: auto;
+}
+
+.bg_content {
+	background-color: #fff;
+	padding-bottom: 60px;
+}
+
+.password__eye {
+	font-size: 20px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	z-index: 5;
+}
+
+.forget_password {
+	font-weight: bolder;
+	text-transform: uppercase;
+}
+
+.auth_btn {
+	background-color: #fb0405;
+	color: #f5f5f5;
+	text-transform: uppercase;
+}
+
+.form_control {
+	border: none;
+	box-shadow: 2px 4px 8px #d5d3d3 inset;
+	background-color: #f5f5f5;
+}
+
+.form_control:focus {
+	color: #212529;
+	border-color: #86b7fe00;
+	outline: 0;
+	box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0);
+	border: none;
+	box-shadow: 2px 4px 8px #d5d3d3 inset;
+	background-color: #f5f5f5;
+}
+
+.auth_btn:focus-visible {
+	background-color: #fb0405;
+	color: #fff;
+}
+
+.auth_btn:hover {
+	background-color: #fb0405;
+	color: #fff;
+}
+
+.auth_btn:active {
+	background-color: #fb0405 !important;
+	color: #fff !important;
+}
+
+.spinner__border {
+	border: 0;
+	width: 20px;
+	margin-right: 5px;
+}
+
+.google_icon {
+	background: #ffffff;
+	padding: 3px;
+	font-size: 22px;
+	margin-right: 10px;
+	border-radius: 50%;
+}
+
+.signup_logo {
+	width: auto;
+	height: auto;
+	display: flex;
+	margin: auto;
+}
+
+.content_wreapper {
+	width: 50%;
+	display: flex;
+	margin: auto;
+}
+
+.signin_modal__container > div:nth-child(1) {
+	justify-content: center;
+}
+
+.signin_modal__container > div:nth-child(1) > div:nth-child(1) {
+	width: 86%;
+}
+
+.modal__header {
+	border-bottom: none;
+	justify-content: end;
+	position: relative;
+	padding: 5px;
+}
+
+.modal_cross__btn {
+	font-size: 25px;
+	cursor: pointer;
+	color: #fd0000;
+}
+
+@media screen and (max-width: 576px) {
+	.content_wreapper {
+		width: 100%;
+	}
+}

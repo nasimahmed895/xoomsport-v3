@@ -1,0 +1,240 @@
+.date_and_seat {
+	padding: 22px 30px;
+	display: flex;
+	justify-content: space-between;
+	background-color: #f0f0f0;
+	margin-top: -11px;
+	-webkit-clip-path: polygon(0% 19%, 100% 0%, 100% 100%, 0% 100%);
+	clip-path: polygon(0% 19%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.preview__date {
+	display: flex;
+	align-items: center;
+}
+
+.previous_match__result {
+	margin-top: 30px;
+}
+
+.match__date {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-left: 10px;
+	font-size: 14px;
+	color: #151515;
+}
+
+.team_title {
+	font-family: "HelveticaNeue-Bold-t", "HelveticaNeue-Bold-w";
+	margin-left: 30px;
+	font-size: 16px;
+	color: #151515;
+	text-transform: uppercase;
+}
+
+.short_table__heading span {
+	font-family: "HelveticaNeue-Bold-t", "HelveticaNeue-Bold-w";
+	margin-left: 30px;
+	font-size: 16px;
+	color: #151515;
+	text-transform: uppercase;
+}
+
+.goal_result__text {
+	font-family: "HelveticaNeue-Bold-t", "HelveticaNeue-Bold-w";
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 16px;
+	color: #151515;
+}
+
+.team__result {
+	margin: 30px 15px 0px 0px;
+	overflow: scroll;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.single_match__result {
+	margin-left: 30px;
+	margin-right: 10px;
+}
+
+.team__heading {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.result_status_all {
+	display: flex;
+	margin-right: 15px;
+}
+
+.result_status {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10px;
+	border: 1px solid #151515;
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+}
+
+.league_details__text {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin-top: 30px;
+	padding: 0px 30px;
+}
+
+.league__logo {
+	border-radius: 50%;
+	border: 1px solid #151515;
+}
+
+.league__logo2 {
+	border-radius: 50%;
+	border: 1px solid #151515;
+	height: 35px;
+	width: 35px;
+}
+
+.league__title {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-left: 15px;
+	margin-bottom: 0px;
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #151515;
+	display: block;
+}
+
+.league__country {
+	display: block;
+	font-size: 12px;
+	margin-left: 15px;
+	text-transform: uppercase;
+	letter-spacing: 0.8px;
+}
+
+.short__table {
+	margin-top: 30px;
+}
+
+.short_table__heading {
+	padding: 10px 0px;
+	background-color: #f0f0f0;
+}
+
+.main__table {
+	border-style: none !important;
+	border-color: #0000;
+	font-size: 14px;
+	text-align: center;
+	margin-top: 2rem !important;
+}
+
+.main__table th {
+	color: #9a9a9a;
+}
+
+.main__table th:first-child {
+	text-align: center;
+}
+
+.main__table td:first-child {
+	text-align: center;
+}
+
+.main__table th:nth-child(2) {
+	text-align: start;
+}
+
+.main__table td:nth-child(2) {
+	text-align: start;
+}
+
+.table_team__title {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-left: 10px;
+	font-size: 14px;
+	color: #151515;
+	text-transform: uppercase;
+}
+
+.wildcard_w {
+	background-color: #4caf50;
+	color: #ffffff;
+}
+
+.wildcard_d {
+	background-color: #ffffff;
+	color: #151515;
+}
+
+.wildcard_l {
+	background-color: #f01717;
+	color: #ffffff;
+}
+
+@media screen and (max-width: 991px) {
+	.team__result {
+		margin: 30px 15px 0px 0px;
+		overflow: scroll;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+
+	.single_match__result {
+		margin-bottom: 15px;
+	}
+	.overflow_scroll {
+		overflow: scroll;
+	}
+}
+
+@media screen and (max-width: 578px) {
+	.team_title {
+		font-size: 14px;
+		display: block;
+		margin-left: 0px;
+		margin-bottom: 10px;
+	}
+
+	.result_status {
+		width: 20px;
+		height: 20px;
+	}
+
+	.league__logo {
+		width: 20px;
+		height: 20px;
+	}
+
+	.single_match__result {
+		margin-right: -18px;
+	}
+
+	.team__heading {
+		justify-content: flex-start;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-left: 30px;
+	}
+
+	.result_status {
+		font-size: 10px;
+	}
+
+	.table_team__title {
+		font-size: 13px;
+		word-break: unset;
+	}
+}

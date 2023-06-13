@@ -1,0 +1,64 @@
+.shine {
+  background: #d0d3d5;
+  background-image: linear-gradient(
+    to right,
+    #dadee1 0%,
+    #d0d3d5 20%,
+    #d0d3d5 40%,
+    #d0d3d5 100%
+  );
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: relative;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeholderShimmer;
+  animation-timing-function: linear;
+  height: fit-content;
+}
+
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -68px 0;
+  }
+
+  100% {
+    background-position: 68px 0;
+  }
+}
+.dash {
+  display: inline-block;
+  position: relative;
+}
+.match {
+  height: 25px;
+  cursor: wait;
+  text-align: right;
+}
+.match_left {
+  height: 30px;
+  cursor: wait;
+  width: 150px;
+  border-radius: 5px;
+}
+.cursor_wait {
+  cursor: wait;
+}
+.right_image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  margin-left: 10px;
+}
+
+.teamOne {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}
+.teamOneScor {
+  width: 30px;
+  height: 10px;
+  margin: 0 5px;
+}

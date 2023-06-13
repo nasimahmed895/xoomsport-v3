@@ -1,0 +1,135 @@
+.league__logo {
+	border-radius: 50%;
+	padding: 2px;
+	background-color: #ffffff;
+}
+
+.league_details__heading {
+	display: flex;
+	align-items: center;
+	padding: 20px 25px;
+	background-color: #151515;
+	color: #ffffff;
+	text-transform: uppercase;
+	padding-top: 30px;
+}
+
+.league_details__content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	border-bottom: 1px solid #ffffff;
+	padding-bottom: 15px;
+}
+
+.league_details__text {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.league_details_tab__heading {
+	display: flex;
+	align-items: center;
+	padding: 10px 10px;
+	background-color: #151515;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.league__logo {
+	border-radius: 50%;
+	border: 1px solid #151515;
+}
+
+.league__title {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-left: 15px;
+	margin-bottom: 0px;
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #ffffff;
+	display: block;
+}
+
+.league__country {
+	display: block;
+	font-size: 12px;
+	margin-left: 15px;
+}
+
+.league_details_tab__link {
+	color: #ffffff;
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	text-transform: uppercase;
+}
+
+.league_details_tab__link:focus,
+.league_details_tab__link:hover {
+	color: #fb0405 !important;
+}
+
+.select_style {
+	color: #fff;
+	background-color: #151515;
+	background-image: url(/static/images/down_arrow.png);
+	border: none;
+}
+.select_style:focus {
+	border-color: #3c38ae00;
+	border: none;
+	outline: 0;
+	box-shadow: 0 0 0 0.25rem rgba(119, 51, 51, 0);
+}
+
+.notification_icon_web {
+	font-size: 25px;
+	margin-left: 15px;
+}
+
+.notification_icon_mobile {
+	font-size: 20px;
+	margin-right: 15px;
+	margin-top: 6px;
+}
+
+.top__nav {
+	display: none;
+	justify-content: space-between;
+	align-items: center;
+	height: 45px;
+}
+
+.web_favorite_icon {
+	cursor: pointer;
+}
+
+@media screen and (max-width: 991px) {
+	.league_details_tab__heading {
+		overflow: scroll;
+		display: flex;
+		flex-wrap: nowrap;
+		font-size: 12px;
+	}
+
+	.web_favorite_icon {
+		display: none;
+	}
+
+	.notification_icon_web {
+		display: none;
+	}
+
+	.top__nav {
+		display: flex;
+	}
+
+	.league_details_tab__heading {
+		padding: 0px 0px 20px 0px;
+	}
+
+	.league_details_tab__link {
+		padding: 3px 6px;
+	}
+}

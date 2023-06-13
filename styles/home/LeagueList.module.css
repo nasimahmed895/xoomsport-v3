@@ -1,0 +1,55 @@
+.card__heading {
+	padding: 20px 0px;
+	background-color: #151515;
+	color: #ffffff;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	-webkit-clip-path: polygon(0% 5%, 100% 0%, 100% 93%, 0% 100%);
+	clip-path: polygon(0% 4%, 100% 0%, 100% 93%, 0% 100%);
+}
+
+.league__list {
+	-webkit-clip-path: polygon(0% 1%, 100% 0%, 100% 96%, 0% 100%);
+	clip-path: polygon(0% 1%, 100% 0%, 100% 98.5%, 0% 100%);
+	margin-top: -5px;
+	padding-bottom: 1px;
+}
+
+.league__list1 {
+	-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 99.8%, 0% 100%);
+	clip-path: polygon(0% 0%, 100% 0%, 100% 99.8%, 0% 100%);
+	margin-top: -5px;
+	padding-bottom: 1px;
+}
+
+.card__title {
+	margin-bottom: 0px;
+	margin-left: 10px;
+	margin-top: 5px;
+}
+
+.league__item {
+	background-color: #f0f0f0;
+	padding: 14px 0px 8px 15px;
+	display: flex;
+	align-items: center;
+}
+
+.league__logo {
+	border-radius: 50%;
+	border: 1px solid #151515;
+}
+
+.league__title {
+	margin-left: 10px;
+	text-transform: uppercase;
+	color: #151515;
+	display: block;
+}
+
+@media screen and (max-width: 576px) {
+	.league__container {
+		display: none;
+	}
+}

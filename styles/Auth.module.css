@@ -1,0 +1,101 @@
+.signin_modal__container > div:nth-child(1) {
+	justify-content: center;
+}
+
+.signup_modal__container > div:nth-child(1) {
+	justify-content: center;
+}
+
+.signin_modal__container > div:nth-child(1) > div:nth-child(1) {
+	width: 86%;
+}
+
+.signup_modal__container > div:nth-child(1) > div:nth-child(1) {
+	width: 86%;
+}
+
+.modal_cross__btn {
+	font-size: 25px;
+	cursor: pointer;
+	color: #fb0405;
+}
+
+.modal__header {
+	border-bottom: none;
+	justify-content: end;
+	position: relative;
+	padding: 5px;
+}
+
+.hanging_auth_signin {
+	position: absolute;
+	top: 0%;
+	padding: 5px 10px;
+	right: 140px;
+}
+
+.hanging_auth_signup {
+	position: absolute;
+	top: 0%;
+	padding: 5px 10px;
+	right: 50px;
+}
+
+.hanging_auth_active {
+	background-color: #fb0405;
+	color: #ffffff;
+}
+
+.hanging_auth_inactive {
+	background-color: #151515;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.password__eye {
+	font-size: 20px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	z-index: 5;
+}
+
+.spinner__border {
+	border: 0;
+	width: 20px;
+	margin-right: 5px;
+}
+
+.forget_password {
+	color: #fb0405;
+	cursor: pointer;
+}
+
+.auth_btn {
+	background-color: #fb0405;
+	text-transform: uppercase;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 45px;
+}
+
+.google_icon {
+	background: #ffffff;
+	padding: 3px;
+	font-size: 22px;
+	margin-right: 10px;
+	border-radius: 50%;
+}
+
+.apple_icon {
+	color: #ffffff;
+	font-size: 22px;
+	margin-right: 10px;
+}
+
+.go_to_login span {
+	color: #fb0405;
+	cursor: pointer;
+}

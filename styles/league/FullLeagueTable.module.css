@@ -1,0 +1,126 @@
+.league_table__heading {
+	background-color: #151515;
+	color: #ffffff;
+	text-transform: uppercase;
+	padding: 12px 0px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.league__list {
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.league__list th {
+	color: #9a9a9a;
+}
+
+.league__list td {
+	border-style: hidden;
+}
+
+.league__item {
+	padding: 0px 0px 8px 15px;
+	display: flex;
+	align-items: center;
+}
+
+.league__logo {
+	border-radius: 50%;
+	padding: 2px;
+	margin-right: 10px;
+	background-color: #ffffff;
+}
+
+.team__logo {
+	border-radius: 50%;
+	border: 1px solid #151515;
+	margin-right: 5px;
+}
+
+.league__title {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-left: 10px;
+	text-transform: uppercase;
+}
+
+.main__table {
+	border-style: none !important;
+	border-color: #0000;
+	font-size: 16px;
+	text-align: center;
+	margin-bottom: 2rem !important;
+}
+
+.main__table th:first-child {
+	text-align: center;
+}
+.main__table td:first-child {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.main__table td:first-child span {
+	font-size: 30px;
+}
+
+.main__table td:first-child {
+	text-align: center;
+}
+
+.main__table th:nth-child(2) {
+	text-align: start;
+}
+
+.main__table td:nth-child(2) {
+	text-align: start;
+	padding: 10px 0;
+}
+
+.match__not_found {
+	text-align: center;
+}
+
+.match__not_found p {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	text-transform: uppercase;
+}
+
+.color__table {
+	margin-left: 30px;
+}
+
+.table_custom {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.league__container {
+	display: none;
+}
+
+@media screen and (max-width: 576px) {
+	.main__table {
+		font-size: 11px;
+	}
+	.main__table td:first-child span {
+		font-size: 25px;
+	}
+	.league__logo {
+		width: 30px;
+		height: 30px;
+	}
+	.table_border td {
+		padding: 0px 0.5rem;
+	}
+	.group_name {
+		font-size: 13px;
+	}
+	.league__list_tr {
+		font-size: 12px;
+	}
+}

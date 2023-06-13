@@ -1,0 +1,44 @@
+.shine {
+	background: #d0d3d5;
+	background-image: linear-gradient(
+		to right,
+		#dadee1 0%,
+		#d0d3d5 20%,
+		#d0d3d5 40%,
+		#d0d3d5 100%
+	);
+	background-repeat: no-repeat;
+	display: inline-block;
+	position: relative;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-name: placeholderShimmer;
+	animation-timing-function: linear;
+	height: fit-content;
+	border-radius: 5px;
+}
+
+@keyframes placeholderShimmer {
+	0% {
+		background-position: -100vw 0;
+	}
+
+	100% {
+		background-position: 100vw 0;
+	}
+}
+
+.image {
+	height: 200px;
+	width: 100%;
+}
+.content__wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+.news__title {
+	display: block;
+	margin-bottom: 5px;
+	height: 20px;
+}

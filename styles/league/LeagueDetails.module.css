@@ -1,0 +1,160 @@
+.league__logo {
+	border-radius: 50%;
+	padding: 2px;
+	background-color: #ffffff;
+}
+
+.league_details__heading {
+	display: flex;
+	align-items: center;
+	padding: 35px 0px 10px 25px;
+	background-color: #151515;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.league_details__content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	border-bottom: 1px solid #ffffff;
+	padding-bottom: 15px;
+}
+
+.league_details__text {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.league_details_tab__heading {
+	display: flex;
+	align-items: center;
+	padding: 10px 10px;
+	background-color: #151515;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.league__logo {
+	border-radius: 50%;
+	border: 1px solid #151515;
+}
+
+.league__title {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-left: 15px;
+	margin-bottom: 0px;
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #ffffff;
+	display: block;
+}
+
+.league__country {
+	display: block;
+	font-size: 12px;
+	margin-left: 15px;
+}
+
+.league_details_tab__link {
+	color: #ffffff;
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	text-transform: uppercase;
+	width: max-content;
+}
+
+.league_details_tab__link:focus,
+.league_details_tab__link:hover {
+	color: #fb0405 !important;
+}
+
+.select_style {
+	color: #fff;
+	background-color: #151515;
+	background-image: url(/static/images/down_arrow.png);
+	border: none;
+	margin-top: 3px;
+}
+
+.select_style:focus {
+	border-color: #3c38ae00;
+	border: none;
+	outline: 0;
+	box-shadow: 0 0 0 0.25rem rgba(119, 51, 51, 0);
+}
+
+.mobile_top_bell,
+.mobile_top_favorite {
+	display: none;
+}
+
+.container_clip_path_web_content {
+	position: relative;
+	width: 100%;
+	height: auto;
+	-webkit-clip-path: polygon(0% 9%, 100% 0%, 100% 95%, 0% 100%);
+	clip-path: polygon(0% 6%, 100% 0%, 100% 94%, 0% 100%);
+	border-radius: 10px;
+}
+
+.web_favorite {
+	cursor: pointer;
+}
+
+@media screen and (max-width: 991px) {
+	.league_details__heading {
+		margin-top: 50px;
+	}
+
+	.league__title {
+		font-size: 16px;
+		margin-bottom: 3px;
+	}
+
+	.league__country {
+		font-size: 11px;
+	}
+
+	.league_details_tab__heading {
+		overflow: scroll;
+		display: flex;
+		flex-wrap: nowrap;
+		padding: 20px 10px;
+	}
+
+	.league_details_tab__link {
+		font-size: 13px;
+		padding: 8px 6px;
+	}
+
+	.mobile_top_favorite {
+		position: absolute;
+		display: block;
+		right: 10px;
+		top: 10px;
+	}
+
+	.mobile_top_favorite img {
+		height: 20px;
+		width: 20px;
+	}
+
+	.mobile_top_bell {
+		display: block;
+		position: absolute;
+		right: 50px;
+		top: 15px;
+		font-size: 19px;
+	}
+
+	.web_top_favorite {
+		display: none;
+	}
+
+	.select_style {
+		font-size: 11px;
+		background-size: 10px;
+	}
+}

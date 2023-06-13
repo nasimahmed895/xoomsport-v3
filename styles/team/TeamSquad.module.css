@@ -1,0 +1,57 @@
+.league_details__text {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 15px 30px;
+}
+
+.league__title {
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+	margin-left: 10px;
+	text-transform: capitalize;
+	margin-bottom: 0;
+}
+
+.league__logo {
+	border-radius: 50%;
+	border: 1px solid #151515;
+}
+
+.country__logo {
+	margin-left: 10px;
+}
+
+.country__name {
+	font-size: 12px;
+	margin-left: 6px;
+}
+
+.team_squad__title {
+	padding-left: 30px;
+	margin: 0;
+	text-transform: uppercase;
+	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
+}
+
+.single__squad {
+	margin-top: 30px;
+}
+
+.team_squad__container .single__squad:nth-child(1),
+.single__squad:nth-child(2),
+.single__squad:nth-child(3),
+.single__squad:nth-child(4) {
+	border-bottom: 1px solid #1515157d;
+}
+@media screen and (max-width: 576px) {
+	.league__title {
+		font-size: 12px;
+	}
+	.country__logo {
+		width: 20px;
+		height: 14px;
+	}
+	.team_squad__title {
+		font-size: 15px;
+	}
+}
