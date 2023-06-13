@@ -167,7 +167,7 @@ export default function Layout({
 
 			<Container className={`${styles.main__container}`}>
 				{/* Native Banner start */}
-				<Script type='text/javascript' src='//pl19713846.highrevenuegate.com/26/f9/50/26f950761cf21432e5082e438a43b6ea.js'></Script>
+				<Script async="async" data-cfasync="false" src="//pl19705711.highrevenuegate.com/adc776e4feb8fe47f8b01cad883134cf/invoke.js"></Script>
 				<div id="container-adc776e4feb8fe47f8b01cad883134cf"></div>
 				{/* Native Banner end */}
 
