@@ -295,9 +295,8 @@ export default function Layout({
 				{/* <ReactQueryDevtools initialIsOpen={false} position="bottom-right" /> */}
 				<ToastContainer position="bottom-right" />
 			</Container>
-			{/* socal */}
-			<Script type='text/javascript' src='//pl19713846.highrevenuegate.com/26/f9/50/26f950761cf21432e5082e438a43b6ea.js'></Script>
-			<Script type='text/javascript' src='//pl19706691.highrevenuegate.com/37/89/0a/37890a5064b6650b9adfff77672a0fc4.js'></Script>
+
+
 			<Footer />
 		</>
 	);
