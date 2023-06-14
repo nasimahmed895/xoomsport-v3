@@ -7,7 +7,7 @@ import { useQuery } from "react-query";
 // import { ReactQueryDevtoolds } from "react-query/devtools";
 import Script from "next/script";
 import { ToastContainer, toast } from "react-toastify";
-import AdsterraBanner, { AdsterraBanner2 } from "./AdsterraBanner";
+import AdsterraBanner from "./AdsterraBanner";
 import ChangePasswordModalForm from "./auth/ChangePasswordModalForm";
 import ForgetPasswordModalForm from "./auth/ForgetPasswordModalForm";
 import OTPModalForm from "./auth/OTPModalForm";
@@ -235,7 +235,6 @@ export default function Layout({
 									trendingNewsPost={trendingNewsPost}
 								/>
 								<br />
-								<AdsterraBanner2 />
 								<Script
 									type="text/javascript"
 									src="//pl19706691.highrevenuegate.com/37/89/0a/37890a5064b6650b9adfff77672a0fc4.js"
