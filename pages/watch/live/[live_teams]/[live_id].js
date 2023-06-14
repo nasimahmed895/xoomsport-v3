@@ -150,7 +150,6 @@ export default function WatchDetails({
 
 				<div className="live_video_section">
 					{liveMatchesView()}
-					<h1>ads</h1>
 					<Script
 						async="async"
 						data-cfasync="false"

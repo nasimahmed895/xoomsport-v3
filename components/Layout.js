@@ -235,12 +235,14 @@ export default function Layout({
 									trendingNewsPost={trendingNewsPost}
 								/>
 								<br />
+								{/* Social Bar */}
 								<Script
 									type="text/javascript"
 									src="//pl19706691.highrevenuegate.com/37/89/0a/37890a5064b6650b9adfff77672a0fc4.js"
 								></Script>
+								{/* Social Bar */}
 								<p>adds 300/160 s</p>
-								<Script src="/ad-script.js" type="text/javascript" />
+								<AdsterraBanner />
 								{isLoading2 ||
 									isError2 ||
 									pointTable?.data?.data == undefined ? (
