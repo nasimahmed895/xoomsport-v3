@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function AdsterraBanner() {
+export default function AdsterraBanner2() {
 	const banner = useRef();
 
 	useEffect(() => {
