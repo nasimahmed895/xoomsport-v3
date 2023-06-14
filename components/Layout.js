@@ -7,7 +7,7 @@ import { useQuery } from "react-query";
 // import { ReactQueryDevtoolds } from "react-query/devtools";
 import Script from "next/script";
 import { ToastContainer, toast } from "react-toastify";
-import AdsterraBanner from "./AdsterraBanner";
+import AdsterraBanner, { AdsterraBanner2 } from "./AdsterraBanner";
 import ChangePasswordModalForm from "./auth/ChangePasswordModalForm";
 import ForgetPasswordModalForm from "./auth/ForgetPasswordModalForm";
 import OTPModalForm from "./auth/OTPModalForm";
@@ -185,8 +185,8 @@ export default function Layout({
 								className={`mb-4 ${styles.left_column}`}
 							>
 								{isLoading1 ||
-								isError1 ||
-								topLeagueList?.data?.data == undefined ? (
+									isError1 ||
+									topLeagueList?.data?.data == undefined ? (
 									<LeagueListShimmer />
 								) : (
 									<>
@@ -229,14 +229,14 @@ export default function Layout({
 									trendingNewsPost={trendingNewsPost}
 								/>
 								<br />
-								<AdsterraBanner />
+								<AdsterraBanner2 />
 								<Script
 									type="text/javascript"
 									src="//pl19706691.highrevenuegate.com/37/89/0a/37890a5064b6650b9adfff77672a0fc4.js"
 								></Script>
 								{isLoading2 ||
-								isError2 ||
-								pointTable?.data?.data == undefined ? (
+									isError2 ||
+									pointTable?.data?.data == undefined ? (
 									<ShortLeagueTableShimmer />
 								) : (
 									<LeagueTable pointTableData={pointTable?.data?.data} />
