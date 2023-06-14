@@ -137,15 +137,14 @@ export default function PremiumPlansModal({
 									className={`spinner-border ${styles.spinner__border}`}
 								/>
 							) : (
-								subscriptions.data.data.map((plan) => {
+								subscriptions?.data?.data?.map((plan) => {
 									return (
 										<div
 											key={plan.id}
-											className={`${styles.single__plan} ${
-												activePlan == plan?.name.toLowerCase()
-													? styles.plan__active
-													: null
-											}`}
+											className={`${styles.single__plan} ${activePlan == plan?.name.toLowerCase()
+												? styles.plan__active
+												: null
+												}`}
 											ref={(el) => (planRefs.current[plan?.id] = el)}
 											data-product-id={plan?.product_id}
 											data-selected={
@@ -231,11 +230,10 @@ export default function PremiumPlansModal({
 							className={`spinner-border ${styles.spinner__border}`}
 						/>
 					) : (
-						subscriptions.data.data.map((plan) => (
+						subscriptions?.data?.data?.map((plan) => (
 							<div
-								className={`${styles.why__join} ${
-									plan.name.toLowerCase() == activePlan ? "" : "d-none"
-								}`}
+								className={`${styles.why__join} ${plan.name.toLowerCase() == activePlan ? "" : "d-none"
+									}`}
 								key={plan?.id}
 							>
 								<ul className={styles.join_check__list}>
