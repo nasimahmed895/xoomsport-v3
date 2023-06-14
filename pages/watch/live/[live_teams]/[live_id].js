@@ -116,8 +116,8 @@ export default function WatchDetails({
 											value={item.stream_url}
 											onClick={handleChange}
 											className={`${activeButton === item.stream_title
-													? styles.buttonactive
-													: ""
+												? styles.buttonactive
+												: ""
 												} text-white target bg-none border-0`}
 										>
 											{item.stream_title}
@@ -150,12 +150,14 @@ export default function WatchDetails({
 
 				<div className="live_video_section">
 					{liveMatchesView()}
+					<h1>ads</h1>
 					<Script
 						async="async"
 						data-cfasync="false"
 						src="//pl19705711.highrevenuegate.com/adc776e4feb8fe47f8b01cad883134cf/invoke.js"
 					></Script>
 					<div id="container-adc776e4feb8fe47f8b01cad883134cf"></div>
+
 					{filtered.length == 0 ? (
 						""
 					) : (

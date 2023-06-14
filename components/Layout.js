@@ -239,6 +239,7 @@ export default function Layout({
 									type="text/javascript"
 									src="//pl19706691.highrevenuegate.com/37/89/0a/37890a5064b6650b9adfff77672a0fc4.js"
 								></Script>
+								<Script src="/ad-script.js" type="text/javascript" />
 								{isLoading2 ||
 									isError2 ||
 									pointTable?.data?.data == undefined ? (
