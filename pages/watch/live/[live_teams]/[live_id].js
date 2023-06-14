@@ -115,11 +115,10 @@ export default function WatchDetails({
 										<Button
 											value={item.stream_url}
 											onClick={handleChange}
-											className={`${
-												activeButton === item.stream_title
+											className={`${activeButton === item.stream_title
 													? styles.buttonactive
 													: ""
-											} text-white target bg-none border-0`}
+												} text-white target bg-none border-0`}
 										>
 											{item.stream_title}
 										</Button>
