@@ -8,7 +8,6 @@ import { useQuery } from "react-query";
 import Script from "next/script";
 import { ToastContainer, toast } from "react-toastify";
 import AdsterraBanner from "./ads/AdsterraBanner";
-import AdsterraBanner2 from "./ads/AdsterraBanner2";
 import ChangePasswordModalForm from "./auth/ChangePasswordModalForm";
 import ForgetPasswordModalForm from "./auth/ForgetPasswordModalForm";
 import OTPModalForm from "./auth/OTPModalForm";
@@ -244,7 +243,7 @@ export default function Layout({
 								></Script>
 								{/* Social Bar */}
 								<p>adds 300/160 s</p>
-								<AdsterraBanner2 />
+								<AdsterraBanner />
 								{isLoading2 ||
 									isError2 ||
 									pointTable?.data?.data == undefined ? (
