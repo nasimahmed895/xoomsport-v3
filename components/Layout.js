@@ -204,7 +204,7 @@ export default function Layout({
 										<br />
 									</>
 								)}
-								<p>one s banner1 ads</p>
+								<p>one s banner1 test code</p>
 								<AdsterraBanner />
 								{isLoading || isError || allLeagues?.data?.data == undefined ? (
 									<LeagueListShimmer />
