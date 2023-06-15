@@ -31,7 +31,7 @@ export default function NewsDetails({ newsDetailsPost }) {
 				<span className={styles.news__title_details}>
 					{he.decode(newsDetailsPost.title)}
 				</span>
-				{newsDetailsPost.desc.map((item) => (
+				{newsDetailsPost.desc.map((item, index) => (
 					<span className="news__desc" key={item}>
 						{item.details}
 						<br />
