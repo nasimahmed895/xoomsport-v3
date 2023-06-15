@@ -5,7 +5,7 @@ export default function AdsterraBanner() {
 
 	useEffect(() => {
 		const atOptions = {
-			key: "9a2151be3b8f2101fc939619dcf0ae2d",
+			key: "223a080201d1a296f4d892fc7a5e600f",
 			format: "iframe",
 			height: 100,
 			width: 300,
