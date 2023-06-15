@@ -8,6 +8,7 @@ import Cookies from "js-cookie";
 import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { FiChevronRight } from "react-icons/fi";
@@ -316,22 +317,19 @@ export default function FixtureList({ pickrDate }) {
 								{groupBy[item].map((team, index) => (
 									<div key={team.id} className={styles.fixtures__wrapper}>
 										<Link
-											href={`/match/${
-												all_status.includes(groupBy[item][index]?.time?.status)
+											href={`/match/${all_status.includes(groupBy[item][index]?.time?.status)
 													? "details"
 													: "preview"
-											}/${getSlugify(
-												team?.localTeam?.data?.name
-											)}-vs-${getSlugify(team?.visitorTeam?.data?.name)}/${
-												team?.id
-											}`}
+												}/${getSlugify(
+													team?.localTeam?.data?.name
+												)}-vs-${getSlugify(team?.visitorTeam?.data?.name)}/${team?.id
+												}`}
 											key={team?.id}
 											className="text-dec-none"
 										>
 											<div
-												className={`${styles.fixture__content} rotate_main ${
-													index > 0 ? "mt-1" : ""
-												}`}
+												className={`${styles.fixture__content} rotate_main ${index > 0 ? "mt-1" : ""
+													}`}
 											>
 												<Row
 													className={`w-100 align-items-center ${styles.fixture__content_row} ${styles.rotate_main_row}`}
@@ -418,6 +416,12 @@ export default function FixtureList({ pickrDate }) {
 							</div>
 						);
 					})}
+					<Script
+						async="async"
+						data-cfasync="false"
+						src="//pl19705711.highrevenuegate.com/adc776e4feb8fe47f8b01cad883134cf/invoke.js"
+					></Script>
+					<div id="container-adc776e4feb8fe47f8b01cad883134cf"></div>
 					<div className="responsive_bottom"></div>
 				</>
 			);
