@@ -318,8 +318,8 @@ export default function FixtureList({ pickrDate }) {
 									<div key={team.id} className={styles.fixtures__wrapper}>
 										<Link
 											href={`/match/${all_status.includes(groupBy[item][index]?.time?.status)
-													? "details"
-													: "preview"
+												? "details"
+												: "preview"
 												}/${getSlugify(
 													team?.localTeam?.data?.name
 												)}-vs-${getSlugify(team?.visitorTeam?.data?.name)}/${team?.id
@@ -416,6 +416,7 @@ export default function FixtureList({ pickrDate }) {
 							</div>
 						);
 					})}
+					<p>Native Banner</p>
 					<Script
 						async="async"
 						data-cfasync="false"
