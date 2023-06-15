@@ -21,42 +21,46 @@ export default function TrendingNews({ heading, trendingNewsPost }) {
 	};
 
 	return (
-		<div className={`${styles.news_container}`}>
-			<div className={styles.card__heading}>
-				<h6 className={styles.card__title}>{heading}</h6>
-			</div>
-
-			<div className={`${styles.news_list}`}>
-				<Slider {...settings}>
-					{trendingNewsPost?.slice(0, 5).map((item) => (
-						<div key={item}>
-							<Link
-								href={`/news/${slugConvert(item.link)}`}
-								style={{ textDecoration: "none" }}
-							>
-								<Image
-									className={styles.news_thumbnail}
-									loader={() => item.image}
-									unoptimized={true}
-									src={item.image}
-									alt="News Thumbnail"
-									width={250}
-									height={180}
-								/>
-								<p className={`${styles.news_title} font-helvetica-medium`}>
-									{item.title.slice(0, 60)}...
-								</p>
-								<p className={`${styles.news_title} font-helvetica-medium m-0`}>
-									Xoom Sport <span>{moment(item.pubDate).fromNow()}</span>
-								</p>
-							</Link>
-						</div>
-					))}
-				</Slider>
-			</div>
+		<>
 			<p>Banner 728x90</p>
 			<AdsterraBanner2 />
-		</div>
+			<div className={`${styles.news_container}`}>
+				<div className={styles.card__heading}>
+					<h6 className={styles.card__title}>{heading}</h6>
+				</div>
+
+				<div className={`${styles.news_list}`}>
+					<Slider {...settings}>
+						{trendingNewsPost?.slice(0, 5).map((item) => (
+							<div key={item}>
+								<Link
+									href={`/news/${slugConvert(item.link)}`}
+									style={{ textDecoration: "none" }}
+								>
+									<Image
+										className={styles.news_thumbnail}
+										loader={() => item.image}
+										unoptimized={true}
+										src={item.image}
+										alt="News Thumbnail"
+										width={250}
+										height={180}
+									/>
+									<p className={`${styles.news_title} font-helvetica-medium`}>
+										{item.title.slice(0, 60)}...
+									</p>
+									<p className={`${styles.news_title} font-helvetica-medium m-0`}>
+										Xoom Sport <span>{moment(item.pubDate).fromNow()}</span>
+									</p>
+								</Link>
+							</div>
+						))}
+					</Slider>
+				</div>
+
+			</div>
+		</>
+
 	);
 	// }
 }
