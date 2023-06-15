@@ -173,7 +173,7 @@ export default function Layout({
 					src="//pl19705711.highrevenuegate.com/adc776e4feb8fe47f8b01cad883134cf/invoke.js"
 				></Script>
 				<div id="container-adc776e4feb8fe47f8b01cad883134cf"></div> */}
-				<p>Banner 750x90</p>
+
 				<AdsterraBanner2 />
 				<Row>
 					{fullScreen ? (
@@ -238,8 +238,7 @@ export default function Layout({
 									trendingNewsPost={trendingNewsPost}
 								/>
 								<br />
-								<p>Banner 160*300</p>
-								<AdsterraBanner />
+
 
 								{isLoading2 ||
 									isError2 ||
