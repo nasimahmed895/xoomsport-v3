@@ -7,7 +7,7 @@ import { useQuery } from "react-query";
 // import { ReactQueryDevtoolds } from "react-query/devtools";
 import Script from "next/script";
 import { ToastContainer, toast } from "react-toastify";
-import AdsterraBanner2 from "./AdsterraBanner2";
+import HeadingAds from "./HeadingAds";
 import ChangePasswordModalForm from "./auth/ChangePasswordModalForm";
 import ForgetPasswordModalForm from "./auth/ForgetPasswordModalForm";
 import OTPModalForm from "./auth/OTPModalForm";
@@ -22,7 +22,6 @@ import TrendingNews from "./home/TrendingNews";
 import LeagueListShimmer from "./shimmer/home/LeagueListShimmer";
 import ShortLeagueTableShimmer from "./shimmer/home/ShortLeagueTableShimmer";
 import PremiumPlansModal from "./subscription/PremiumPlansModal";
-import AdsterraBanner from "./AdsterraBanner";
 export default function Layout({
 	children,
 	fullScreen,
@@ -174,7 +173,7 @@ export default function Layout({
 				></Script>
 				<div id="container-adc776e4feb8fe47f8b01cad883134cf"></div> */}
 				<p>Banner 150x300</p>
-				<AdsterraBanner />
+				<HeadingAds />
 				<Row>
 					{fullScreen ? (
 						<Col

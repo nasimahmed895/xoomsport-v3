@@ -59,7 +59,7 @@ export default function TrendingNews({ heading, trendingNewsPost }) {
 				</div>
 
 			</div>
-			<p>Banner 150x300</p>
+			<p>Banner 468x60</p>
 			<AdsterraBanner />
 		</>
 
