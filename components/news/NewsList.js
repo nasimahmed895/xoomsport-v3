@@ -30,6 +30,7 @@ export default function NewsList({ allNews }) {
 					</div>
 				</div>
 			</Link>
+			<p>Native Banner</p>
 			<Script
 				async="async"
 				data-cfasync="false"
