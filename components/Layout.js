@@ -304,7 +304,6 @@ export default function Layout({
 				<ToastContainer position="bottom-right" />
 			</Container>
 			<p>AdsterraBanner </p>
-			<AdsterraBanner2 />
 			<AdsterraBanner />
 
 			<Script
