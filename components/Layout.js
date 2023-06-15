@@ -235,8 +235,8 @@ export default function Layout({
 									trendingNewsPost={trendingNewsPost}
 								/>
 								<br />
-								{/* <p>AdsterraBanner2</p> */}
-								{/* <AdsterraBanner2 /> */}
+								<p>AdsterraBanner2</p>
+								<AdsterraBanner2 />
 
 								{isLoading2 ||
 									isError2 ||
