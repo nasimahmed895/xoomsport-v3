@@ -7,7 +7,6 @@ import { useQuery } from "react-query";
 // import { ReactQueryDevtoolds } from "react-query/devtools";
 import Script from "next/script";
 import { ToastContainer, toast } from "react-toastify";
-import AdsterraBanner from "./AdsterraBanner";
 import AdsterraBanner2 from "./AdsterraBanner2";
 import ChangePasswordModalForm from "./auth/ChangePasswordModalForm";
 import ForgetPasswordModalForm from "./auth/ForgetPasswordModalForm";
@@ -205,7 +204,7 @@ export default function Layout({
 										<br />
 									</>
 								)}
-								<p>AdsterraBanner2</p>
+								<p>Banner 300x160</p>
 								<AdsterraBanner2 />
 								{isLoading || isError || allLeagues?.data?.data == undefined ? (
 									<LeagueListShimmer />
@@ -237,8 +236,7 @@ export default function Layout({
 									trendingNewsPost={trendingNewsPost}
 								/>
 								<br />
-								<p>AdsterraBanner </p>
-								<AdsterraBanner />
+
 								{isLoading2 ||
 									isError2 ||
 									pointTable?.data?.data == undefined ? (
