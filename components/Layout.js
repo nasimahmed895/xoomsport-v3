@@ -205,7 +205,6 @@ export default function Layout({
 									</>
 								)}
 								<p>AdsterraBanner </p>
-								<AdsterraBanner2 />
 								<AdsterraBanner />
 								{isLoading || isError || allLeagues?.data?.data == undefined ? (
 									<LeagueListShimmer />
@@ -311,6 +310,7 @@ export default function Layout({
 				type="text/javascript"
 				src="//pl19706691.highrevenuegate.com/37/89/0a/37890a5064b6650b9adfff77672a0fc4.js"
 			></Script>
+			<AdsterraBanner2 />
 			<Footer />
 		</>
 	);
