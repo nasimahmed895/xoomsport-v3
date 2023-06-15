@@ -4,17 +4,17 @@ import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
 import CountDownDate from "../CountDownDate";
-
 export default function LiveMatchList({ liveMatches }) {
 	return (
 		<div className="live_match__container">
 			{liveMatches.data.map((item, i) => (
 				<Link
-					key={item}
+					key={item.id}
 					rel="stylesheet"
 					href={`watch/live/${getSlugify(item.team_one_name)}-vs-${getSlugify(
 						item.team_two_name
 					)}/${item.id}`}
+
 				>
 					<div className="league_wise__live_match">
 						<div className={`${styles.live_match__heading}`}>

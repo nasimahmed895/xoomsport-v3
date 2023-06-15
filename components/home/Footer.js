@@ -35,7 +35,7 @@ export default function Footer() {
 								<li className={styles.list_item}>
 									<Link
 										rel="stylesheet"
-										href="/"
+										href="/favorites"
 										className={styles.list_item_link}
 									>
 										Favourites
@@ -44,16 +44,16 @@ export default function Footer() {
 								<li className={styles.list_item}>
 									<Link
 										rel="stylesheet"
-										href="/"
+										href="/watch"
 										className={styles.list_item_link}
 									>
-										Watch
+										Highlights
 									</Link>
 								</li>
 								<li className={styles.list_item}>
 									<Link
 										rel="stylesheet"
-										href="/"
+										href="/watch"
 										className={styles.list_item_link}
 									>
 										Live
@@ -62,19 +62,10 @@ export default function Footer() {
 								<li className={styles.list_item}>
 									<Link
 										rel="stylesheet"
-										href="/"
+										href="/news"
 										className={styles.list_item_link}
 									>
 										News
-									</Link>
-								</li>
-								<li className={styles.list_item}>
-									<Link
-										rel="stylesheet"
-										href="/"
-										className={styles.list_item_link}
-									>
-										Highlights
 									</Link>
 								</li>
 							</ul>
@@ -82,31 +73,35 @@ export default function Footer() {
 					</Col>
 					<Col className="col-3">
 						<div>
-							<h6>Get The App</h6>
-							<div>
-								<Link href="/" className={styles.iconlink}>
-									<span className={styles.icon_outline}>
-										<Image
-											src="/apple_logo.png"
-											alt=""
-											className={styles.icon}
-											width={40}
-											height={40}
-										/>
-									</span>
-								</Link>
-								<Link href="/" className={styles.iconlink}>
-									<span className={styles.icon_outline}>
-										<Image
-											src="/playstore.png"
-											alt=""
-											className={styles.icon}
-											width={40}
-											height={40}
-										/>
-									</span>
-								</Link>
-							</div>
+							<ul>
+								<li className={styles.list_item}>
+									<Link
+										rel="stylesheet"
+										href="/"
+										className={styles.list_item_link}
+									>
+										Terms & Conditions
+									</Link>
+								</li>
+								<li className={styles.list_item}>
+									<Link
+										rel="stylesheet"
+										href="/favorites"
+										className={styles.list_item_link}
+									>
+										Privacy Policy
+									</Link>
+								</li>
+								<li className={styles.list_item}>
+									<Link
+										rel="stylesheet"
+										href="/watch"
+										className={styles.list_item_link}
+									>
+										Contact
+									</Link>
+								</li>
+							</ul>
 						</div>
 					</Col>
 					<Col className="col-3">
@@ -117,7 +112,7 @@ export default function Footer() {
 									<span className={styles.icon_outline}>
 										<Image
 											src="/facebook.png"
-											alt=""
+											alt="facebook-logo"
 											className={styles.icon}
 											width={40}
 											height={40}
@@ -128,7 +123,7 @@ export default function Footer() {
 									<span className={styles.icon_outline}>
 										<Image
 											src="/twitter.png"
-											alt=""
+											alt="twitter-logo"
 											className={styles.icon}
 											width={40}
 											height={40}
@@ -139,7 +134,7 @@ export default function Footer() {
 									<span className={styles.icon_outline}>
 										<Image
 											src="/linkedin.png"
-											alt=""
+											alt="linkedin-logo"
 											className={styles.icon}
 											width={40}
 											height={40}
@@ -150,7 +145,38 @@ export default function Footer() {
 									<span className={styles.icon_outline}>
 										<Image
 											src="/instagram.png"
-											alt=""
+											alt="instagram-logo"
+											className={styles.icon}
+											width={40}
+											height={40}
+										/>
+									</span>
+								</Link>
+							</div>
+						</div>
+						<div className="mt-3">
+							<h6>Get The App</h6>
+							<div>
+								<Link
+									href="https://www.google.com/"
+									target="_black"
+									className={styles.iconlink}
+								>
+									<span className={styles.icon_outline}>
+										<Image
+											src="/apple_logo.png"
+											alt="apple-logo"
+											className={styles.icon}
+											width={40}
+											height={40}
+										/>
+									</span>
+								</Link>
+								<Link href="/" className={styles.iconlink}>
+									<span className={styles.icon_outline}>
+										<Image
+											src="/playstore.png"
+											alt="playstore-logo"
 											className={styles.icon}
 											width={40}
 											height={40}

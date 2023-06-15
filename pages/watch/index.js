@@ -32,6 +32,7 @@ export async function getServerSideProps(context) {
 		method: "POST",
 		api_key: process.env.NEXT_PUBLIC_XOOMSPORT_API_TOKEN,
 	});
+
 	const highlights = await axios.post(
 		`https://xoomsport.com/api/v1/highlights`,
 		{
@@ -39,6 +40,7 @@ export async function getServerSideProps(context) {
 			api_key: process.env.NEXT_PUBLIC_XOOMSPORT_API_TOKEN,
 		}
 	);
+
 	const live = await axios.post(`https://xoomsport.com/api/v1/live_matches`, {
 		method: "POST",
 		api_key: process.env.NEXT_PUBLIC_XOOMSPORT_API_TOKEN,
