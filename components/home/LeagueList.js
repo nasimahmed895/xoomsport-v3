@@ -3,12 +3,13 @@ import getSlugify from "@/utils/getSlugify";
 import Image from "next/image";
 import Link from "next/link";
 import AdsterraBanner2 from "../AdsterraBanner2";
+import AdsterraBanner from "../AdsterraBanner";
 
 export default function LeagueList({ heading, allLeagues }) {
 	return (
 		<>
 			<p>Banner 300x160</p>
-			<AdsterraBanner2 />
+			<AdsterraBanner />
 			<div className={`${styles.league__container}`}>
 				<div className={`${styles.card__heading}`}>
 					<h6 className={styles.card__title}>{heading}</h6>

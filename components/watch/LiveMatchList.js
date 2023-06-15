@@ -70,7 +70,7 @@ export default function LiveMatchList({ liveMatches }) {
 							</div>
 						</div>
 					</Link>
-					{index === 3 && <>
+					{index === 2 && <>
 						<p>Native Banner</p>
 						<Script
 							async="async"

@@ -22,6 +22,7 @@ import TrendingNews from "./home/TrendingNews";
 import LeagueListShimmer from "./shimmer/home/LeagueListShimmer";
 import ShortLeagueTableShimmer from "./shimmer/home/ShortLeagueTableShimmer";
 import PremiumPlansModal from "./subscription/PremiumPlansModal";
+import AdsterraBanner from "./AdsterraBanner";
 export default function Layout({
 	children,
 	fullScreen,
@@ -172,6 +173,8 @@ export default function Layout({
 					src="//pl19705711.highrevenuegate.com/adc776e4feb8fe47f8b01cad883134cf/invoke.js"
 				></Script>
 				<div id="container-adc776e4feb8fe47f8b01cad883134cf"></div> */}
+				<p>Banner 750x90</p>
+				<AdsterraBanner2 />
 				<Row>
 					{fullScreen ? (
 						<Col
@@ -235,8 +238,9 @@ export default function Layout({
 									trendingNewsPost={trendingNewsPost}
 								/>
 								<br />
-								<p>Banner 728x90</p>
-								<AdsterraBanner2 />
+								<p>Banner 160*300</p>
+								<AdsterraBanner />
+
 								{isLoading2 ||
 									isError2 ||
 									pointTable?.data?.data == undefined ? (
