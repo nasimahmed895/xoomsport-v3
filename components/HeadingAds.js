@@ -7,8 +7,6 @@ export default function HeadingAds() {
 		const atOptions = {
 			key: "223a080201d1a296f4d892fc7a5e600f",
 			format: "iframe",
-			height: 100,
-			width: 300,
 			params: {},
 		};
 		if (banner.current && !banner.current.firstChild) {
