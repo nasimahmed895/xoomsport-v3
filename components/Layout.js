@@ -204,7 +204,9 @@ export default function Layout({
 										<br />
 									</>
 								)}
-
+								<p>AdsterraBanner </p>
+								<AdsterraBanner2 />
+								<AdsterraBanner />
 								{isLoading || isError || allLeagues?.data?.data == undefined ? (
 									<LeagueListShimmer />
 								) : (
@@ -303,8 +305,7 @@ export default function Layout({
 				{/* <ReactQueryDevtools initialIsOpen={false} position="bottom-right" /> */}
 				<ToastContainer position="bottom-right" />
 			</Container>
-			<p>AdsterraBanner </p>
-			<AdsterraBanner />
+
 
 			<Script
 				type="text/javascript"
