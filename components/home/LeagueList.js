@@ -7,8 +7,6 @@ import AdsterraBanner from "../AdsterraBanner";
 export default function LeagueList({ heading, allLeagues }) {
 	return (
 		<>
-			<p>Banner 468x60</p>
-			<AdsterraBanner />
 			<div className={`${styles.league__container}`}>
 				<div className={`${styles.card__heading}`}>
 					<h6 className={styles.card__title}>{heading}</h6>
@@ -40,8 +38,9 @@ export default function LeagueList({ heading, allLeagues }) {
 						</div>
 					))}
 				</div>
-
 			</div>
+			<p>Banner 468x60</p>
+			<AdsterraBanner />
 		</>
 
 	);
