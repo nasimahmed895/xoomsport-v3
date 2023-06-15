@@ -23,7 +23,7 @@ export default function AdsterraBanner() {
 	}, [banner]);
 	return (
 		<div
-			className="border justify-content-center align-items-center text-white text-center"
+			className=" ads border justify-content-center align-items-center text-white text-center"
 			ref={banner}
 		></div>
 	);

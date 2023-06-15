@@ -204,6 +204,7 @@ export default function Layout({
 										<br />
 									</>
 								)}
+								<p>AdsterraBanner</p>
 								<AdsterraBanner />
 								{isLoading || isError || allLeagues?.data?.data == undefined ? (
 									<LeagueListShimmer />
@@ -235,6 +236,7 @@ export default function Layout({
 									trendingNewsPost={trendingNewsPost}
 								/>
 								<br />
+								<p>AdsterraBanner2</p>
 								<AdsterraBanner2 />
 
 								{isLoading2 ||
