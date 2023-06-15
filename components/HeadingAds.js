@@ -5,7 +5,7 @@ export default function HeadingAds() {
 
 	useEffect(() => {
 		const atOptions = {
-			key: "223a080201d1a296f4d892fc7a5e600f",
+			key: "c4fb4f68e55a97fb9d2e3a15b766087c",
 			format: "iframe",
 			params: {},
 		};
