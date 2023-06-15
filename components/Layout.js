@@ -173,8 +173,8 @@ export default function Layout({
 					src="//pl19705711.highrevenuegate.com/adc776e4feb8fe47f8b01cad883134cf/invoke.js"
 				></Script>
 				<div id="container-adc776e4feb8fe47f8b01cad883134cf"></div> */}
-
-				<AdsterraBanner2 />
+				<p>Banner 150x300</p>
+				<AdsterraBanner />
 				<Row>
 					{fullScreen ? (
 						<Col

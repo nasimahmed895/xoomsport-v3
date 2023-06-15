@@ -2,12 +2,13 @@ import styles from "@/styles/home/LeagueList.module.css";
 import getSlugify from "@/utils/getSlugify";
 import Image from "next/image";
 import Link from "next/link";
-import AdsterraBanner from "../AdsterraBanner";
+import AdsterraBanner2 from "../AdsterraBanner2";
 
 export default function LeagueList({ heading, allLeagues }) {
 	return (
 		<>
-			<AdsterraBanner />
+			<p>Banner 300x160</p>
+			<AdsterraBanner2 />
 			<div className={`${styles.league__container}`}>
 				<div className={`${styles.card__heading}`}>
 					<h6 className={styles.card__title}>{heading}</h6>

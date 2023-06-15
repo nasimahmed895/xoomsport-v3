@@ -23,7 +23,8 @@ export default function TrendingNews({ heading, trendingNewsPost }) {
 
 	return (
 		<>
-			<div className={`${styles.news_container}`}>
+
+			<div className={`${styles.news_container} mb-3`}>
 				<div className={styles.card__heading}>
 					<h6 className={styles.card__title}>{heading}</h6>
 				</div>
@@ -58,6 +59,7 @@ export default function TrendingNews({ heading, trendingNewsPost }) {
 				</div>
 
 			</div>
+			<p>Banner 150x300</p>
 			<AdsterraBanner />
 		</>
 

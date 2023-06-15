@@ -25,8 +25,6 @@ export default function AdsterraBanner2() {
 		<div
 			className=" ads border justify-content-center align-items-center text-white text-center"
 			ref={banner2}
-		>
-			<p>Banner 750x90</p>
-		</div>
+		></div>
 	);
 }
