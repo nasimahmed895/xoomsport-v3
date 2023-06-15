@@ -36,6 +36,7 @@ export default function NewsList({ allNews }) {
 				data-cfasync="false"
 				src="//pl19705711.highrevenuegate.com/adc776e4feb8fe47f8b01cad883134cf/invoke.js"
 			></Script>
+			<div id="container-adc776e4feb8fe47f8b01cad883134cf"></div>
 			<div className={styles.news_list__wrapper}>
 				{allNews
 					.slice(1)
