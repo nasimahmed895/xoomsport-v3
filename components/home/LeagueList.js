@@ -39,7 +39,6 @@ export default function LeagueList({ heading, allLeagues }) {
 					))}
 				</div>
 			</div>
-			<p>Banner 468x60</p>
 			<AdsterraBanner />
 		</>
 

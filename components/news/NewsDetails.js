@@ -37,7 +37,6 @@ export default function NewsDetails({ newsDetailsPost }) {
 						<br />
 						<br />
 						{index === 2 && <>
-							<p>Banner 728x90</p>
 							<AdsterraBanner2 />
 						</>}
 					</span>

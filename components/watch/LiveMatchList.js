@@ -7,7 +7,6 @@ import Script from "next/script";
 import React from "react";
 import CountDownDate from "../CountDownDate";
 export default function LiveMatchList({ liveMatches }) {
-	const contentList = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6'];
 
 	return (
 		<div className="live_match__container">
@@ -70,8 +69,7 @@ export default function LiveMatchList({ liveMatches }) {
 							</div>
 						</div>
 					</Link>
-					{index === 2 && <>
-						<p>Native Banner</p>
+					{index === 3 && <>
 						<Script
 							async="async"
 							data-cfasync="false"

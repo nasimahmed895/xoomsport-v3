@@ -23,7 +23,7 @@ export default function AdsterraBanner2() {
 	}, [banner2]);
 	return (
 		<div
-			className=" ads border justify-content-center align-items-center text-white text-center"
+			className=" ads d-grid border justify-content-center align-items-center text-white text-center"
 			ref={banner2}
 		></div>
 	);
