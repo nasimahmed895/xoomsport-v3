@@ -3,6 +3,7 @@ import he from "he";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { HiArrowLeft } from "react-icons/hi";
+import AdsterraBanner2 from "../AdsterraBanner2";
 export default function NewsDetails({ newsDetailsPost }) {
 	const router = useRouter();
 
@@ -35,6 +36,10 @@ export default function NewsDetails({ newsDetailsPost }) {
 						{item.details}
 						<br />
 						<br />
+						{index === 2 && <>
+							<p>Banner 728x90</p>
+							<AdsterraBanner2 />
+						</>}
 					</span>
 				))}
 			</div>
