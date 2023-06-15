@@ -2,9 +2,10 @@ import styles from "@/styles/news/NewsList.module.css";
 import slugConvert from "@/utils/getSlugConvert";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 
 export default function NewsList({ allNews }) {
-	function mobile() {}
+	function mobile() { }
 
 	return (
 		<div className="news_list__container">
@@ -29,6 +30,11 @@ export default function NewsList({ allNews }) {
 					</div>
 				</div>
 			</Link>
+			<Script
+				async="async"
+				data-cfasync="false"
+				src="//pl19705711.highrevenuegate.com/adc776e4feb8fe47f8b01cad883134cf/invoke.js"
+			></Script>
 			<div className={styles.news_list__wrapper}>
 				{allNews
 					.slice(1)

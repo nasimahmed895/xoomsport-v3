@@ -416,7 +416,6 @@ export default function FixtureList({ pickrDate }) {
 							</div>
 						);
 					})}
-					<p>Native Banner</p>
 					<Script
 						async="async"
 						data-cfasync="false"
