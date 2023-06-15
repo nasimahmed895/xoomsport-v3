@@ -2,7 +2,6 @@ import styles from "@/styles/home/LeagueList.module.css";
 import getSlugify from "@/utils/getSlugify";
 import Image from "next/image";
 import Link from "next/link";
-import AdsterraBanner from "../AdsterraBanner";
 
 export default function LeagueList({ heading, allLeagues }) {
 	return (
@@ -37,8 +36,7 @@ export default function LeagueList({ heading, allLeagues }) {
 					</div>
 				))}
 			</div>
-			<p>AdsterraBanner </p>
-			<AdsterraBanner />
+
 		</div>
 	);
 }

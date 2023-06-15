@@ -6,7 +6,6 @@ import Link from "next/link";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import AdsterraBanner2 from "../AdsterraBanner2";
 
 export default function TrendingNews({ heading, trendingNewsPost }) {
 	const settings = {
@@ -54,8 +53,7 @@ export default function TrendingNews({ heading, trendingNewsPost }) {
 					))}
 				</Slider>
 			</div>
-			<p>AdsterraBanner2</p>
-			<AdsterraBanner2 />
+
 		</div>
 	);
 	// }
