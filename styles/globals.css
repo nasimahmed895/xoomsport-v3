@@ -530,8 +530,8 @@ body div {
 .ads iframe {
   width: 100% !important;
 }
-.ads iframe img {
-  width: 100% !important;
+html body div a img {
+  width: 100%;
 }
 
 .headingads iframe a img {
