@@ -11,8 +11,8 @@ export default function AdsterraBanner600() {
 			width: 100,
 			params: {},
 		};
-
-		if (bannerRef.current && !bannerRef.current.firstChild) {
+		console.log(bannerRef.current);
+		if (bannerRef.current) {
 			const conf = document.createElement("script");
 			const script = document.createElement("script");
 			script.type = "text/javascript";

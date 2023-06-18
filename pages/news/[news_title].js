@@ -3,7 +3,6 @@ import NewsDetails from "@/components/news/NewsDetails";
 import axios from "axios";
 
 export default function SingleNews({ newsDetailsPost }) {
-	console.log(newsDetailsPost);
 	return (
 		<Layout fullScreen title="News Details">
 			<NewsDetails newsDetailsPost={newsDetailsPost} />
