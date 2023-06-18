@@ -12,15 +12,15 @@ export default function AdsterraBanner600() {
 			params: {},
 		};
 		console.log(bannerRef.current);
-		if (bannerRef.current) {
-			const conf = document.createElement("script");
-			const script = document.createElement("script");
-			script.type = "text/javascript";
-			script.src = `//www.profitabledisplaynetwork.com/${atOptions.key}/invoke.js`;
-			conf.innerHTML = `atOptions = ${JSON.stringify(atOptions)}`;
-			bannerRef.current.appendChild(conf); // Use appendChild instead of append
-			bannerRef.current.appendChild(script); // Use appendChild instead of append
-		}
+		// if (bannerRef.current) {
+		const conf = document.createElement("script");
+		const script = document.createElement("script");
+		script.type = "text/javascript";
+		script.src = `//www.profitabledisplaynetwork.com/${atOptions.key}/invoke.js`;
+		conf.innerHTML = `atOptions = ${JSON.stringify(atOptions)}`;
+		bannerRef.current.appendChild(conf); // Use appendChild instead of append
+		bannerRef.current.appendChild(script); // Use appendChild instead of append
+		// }
 	}, []); // Removed bannerRef from the dependency array
 
 	return (
