@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { HiArrowLeft } from "react-icons/hi";
 import AdsterraBanner320 from "../adsterra/AdsterraBanner320";
 import AdsterraBanner600 from "../adsterra/AdsterraBanner600";
+import AdsterraBanner300 from "../adsterra/AdsterraBanner300";
 export default function NewsDetails({ newsDetailsPost }) {
 	const router = useRouter();
 
@@ -53,7 +54,7 @@ export default function NewsDetails({ newsDetailsPost }) {
 			</div>
 			<div>
 				AdsterraBanner600
-				<AdsterraBanner600 />
+				<AdsterraBanner300 />
 			</div>
 		</div>
 
