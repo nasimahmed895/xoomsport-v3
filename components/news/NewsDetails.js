@@ -54,7 +54,7 @@ export default function NewsDetails({ newsDetailsPost }) {
 			</div>
 			<div>
 				AdsterraBanner300
-				<AdsterraBanner300 />
+				{/* <AdsterraBanner300 /> */}
 			</div>
 		</div>
 
