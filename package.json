@@ -21,6 +21,7 @@
     "eslint-config-next": "13.2.3",
     "firebase": "^9.21.0",
     "he": "^1.2.0",
+    "interweave": "^13.1.0",
     "js-cookie": "^3.0.5",
     "moment": "^2.29.4",
     "moment-countdown": "^0.0.3",
