@@ -1,9 +1,9 @@
-import AdsterraBanner300 from '../adsterra/AdsterraBanner300'
+import AdsterraBanner600 from '../adsterra/AdsterraBanner600'
 
 function AdsLeftSide() {
     return (
         <div>
-            <AdsterraBanner300 />
+            <AdsterraBanner600 />
         </div>
     )
 }
