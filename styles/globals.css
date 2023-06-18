@@ -528,7 +528,7 @@ body div {
 }
 
 .ads iframe {
-  width: 100% !important;
+  width: revert-layer !important;
 }
 .ads img {
   width: 100% !important;
