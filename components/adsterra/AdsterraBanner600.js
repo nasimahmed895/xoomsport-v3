@@ -26,7 +26,7 @@ export default function AdsterraBanner600() {
 	return (
 		<div
 			// Banner 160x600
-			className="d-grid justify-content-center align-items-center text-white text-center"
+			// className="d-grid justify-content-center align-items-center text-white text-center"
 			ref={bannerRef}
 		></div>
 	);
