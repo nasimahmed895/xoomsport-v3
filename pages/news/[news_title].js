@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import AdsRightSide from "@/components/news/AdsRightSide";
 import NewsDetails from "@/components/news/NewsDetails";
 import axios from "axios";
 
@@ -7,6 +8,10 @@ export default function SingleNews({ newsDetailsPost }) {
 	return (
 		<Layout fullScreen title="News Details">
 			<NewsDetails newsDetailsPost={newsDetailsPost} />
+			<div m-2>
+				AdsterraBanner300
+				<AdsRightSide />
+			</div>
 		</Layout>
 	);
 }

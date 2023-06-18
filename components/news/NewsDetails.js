@@ -4,8 +4,8 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { HiArrowLeft } from "react-icons/hi";
 import AdsterraBanner320 from "../adsterra/AdsterraBanner320";
-import AdsterraBanner600 from "../adsterra/AdsterraBanner600";
 import AdsLeftSide from "./AdsLeftSide";
+import AdsRightSide from "./AdsRightSide";
 export default function NewsDetails({ newsDetailsPost }) {
 	const router = useRouter();
 
@@ -13,7 +13,7 @@ export default function NewsDetails({ newsDetailsPost }) {
 		<div className={`${styles.adscontent}`}>
 			<div className="m-2">
 				AdsterraBanner600
-				<AdsterraBanner600 />
+				<AdsLeftSide />
 				{/* <AdsterraBanner320 /> */}
 
 			</div>
@@ -56,7 +56,7 @@ export default function NewsDetails({ newsDetailsPost }) {
 			</div>
 			<div m-2>
 				AdsterraBanner300
-				<AdsLeftSide />
+				<AdsRightSide />
 			</div>
 		</div>
 
