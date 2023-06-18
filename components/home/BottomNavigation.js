@@ -8,29 +8,21 @@ import { useRef, useState } from "react";
 import { IoArrowForward } from "react-icons/io5";
 import { MdNotes } from "react-icons/md";
 
-export default function BottomNavigation({
-	userInfo,
-	authenticate,
-	setAuthenticate,
-}) {
+export default function BottomNavigation({ authenticate, setAuthenticate }) {
 	const [showSidNavbar, setshowSidNavbar] = useState(false);
 	const { setUser, setUserToken } = useAuthContext();
 	const navSideBar = useRef(null);
 	const router = useRouter();
-	let userInformation = "";
-
-	if (userInfo) {
-		userInformation = JSON.parse(userInfo);
-	}
+	const { user } = useAuthContext();
 
 	const handleSignOut = () => {
 		setUser(null);
 		setUserToken(null);
-		Cookies.remove("userInfo", { secure: true });
 		Cookies.remove("userToken", { secure: true });
 		setAuthenticate(false);
 	};
 
+	// Handle Side Navbar (Responsive)
 	const handleNav = () => {
 		if (showSidNavbar) {
 			navSideBar.current.classList.add("left_menu_show");
@@ -200,11 +192,7 @@ export default function BottomNavigation({
 							</li>
 						</ul>
 					</div>
-					<MdNotes
-						className={styles.nav__img}
-						onClick={handleNav}
-						// ref={navIcon}
-					/>
+					<MdNotes className={styles.nav__img} onClick={handleNav} />
 				</nav>
 			</header>
 
@@ -236,8 +224,8 @@ export default function BottomNavigation({
 									</div>
 									<div className="d-flex justify-content-between align-items-center">
 										<div>
-											<div className="mt-3 fw-bold">{userInformation.name}</div>
-											<div>{userInformation.email}</div>
+											<div className="mt-3 fw-bold">{user?.name}</div>
+											<div>{user?.email}</div>
 										</div>
 										<div onClick={handleSignOut}>
 											<Image
@@ -265,19 +253,27 @@ export default function BottomNavigation({
 							<h6>Support</h6>
 							<ul>
 								<li className={styles.support_link}>
-									<Link href="/" className="text-dec-none">
+									<Link
+										target="_blank"
+										href="/contact"
+										className="text-dec-none"
+									>
 										Support & Contact
 										<IoArrowForward className={styles.arrow__icon} />
 									</Link>
 								</li>
 								<li className={styles.support_link}>
-									<Link href="/" className="text-dec-none">
+									<Link target="_blank" href="/terms" className="text-dec-none">
 										Terms of Use
 										<IoArrowForward className={styles.arrow__icon} />
 									</Link>
 								</li>
 								<li className={styles.support_link}>
-									<Link href="/" className="text-dec-none">
+									<Link
+										target="_blank"
+										href="/policy"
+										className="text-dec-none"
+									>
 										Privacy & Policy
 										<IoArrowForward className={styles.arrow__icon} />
 									</Link>

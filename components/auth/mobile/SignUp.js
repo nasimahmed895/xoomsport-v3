@@ -3,7 +3,11 @@ import styles from "@/styles/mobile/Authentication.module.css";
 import { xoomSportUrl } from "@/utils/api/getAxios";
 import { auth } from "@/utils/firebase/firebase";
 import getRandomStr from "@/utils/getRandomStr";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+	GoogleAuthProvider,
+	OAuthProvider,
+	signInWithPopup,
+} from "firebase/auth";
 import Cookies from "js-cookie";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -29,6 +33,9 @@ export default function SignUp() {
 	const [otp, setOtp] = useState("");
 	const [verifyBtn, setVerifyBtn] = useState(false);
 	const [resendBtn, setResendBtn] = useState(false);
+	const passwordRef = useRef();
+	const { setUserToken, setUser, getUser } = useAuthContext();
+	const router = useRouter();
 
 	const resetOtpHandler = async () => {
 		setResendBtn(true);
@@ -66,26 +73,16 @@ export default function SignUp() {
 				.then((res) => {
 					if (res?.data?.status) {
 						const { access_token, data: user } = res?.data;
+
 						setUserToken(access_token);
-						setUser({
-							name: user.name,
-							email: user.email,
-							provider: user.provider,
-						});
+						getUser();
 						Cookies.remove("tempToken");
 						Cookies.set("userToken", access_token, { secure: true });
-						Cookies.set(
-							"userInfo",
-							JSON.stringify({
-								name: user.name,
-								email: user.email,
-								provider: user.provider,
-							}),
-							{ secure: true }
-						);
+
 						toast.success("Sign In Successfully!", {
 							theme: "dark",
 						});
+
 						setOtp("");
 						setError(null);
 						setVerifyBtn(false);
@@ -99,7 +96,6 @@ export default function SignUp() {
 					}
 				});
 		} catch (err) {
-			alert(err);
 			setUserToken(null);
 			setUser(null);
 		}
@@ -107,16 +103,55 @@ export default function SignUp() {
 
 	// Handle OTP
 	const handleOTPClose = () => setShowOTP(false);
-	const handleOTPShow = () => {
-		setShowOTP(false);
-	};
-
-	const passwordRef = useRef();
-	const { setUserToken, setUser } = useAuthContext();
 
 	const googleAuth = new GoogleAuthProvider();
+	const appleAuth = new OAuthProvider("apple.com");
 
-	const router = useRouter();
+	const appleLoginHandler = async () => {
+		try {
+			const result = await signInWithPopup(auth, appleAuth);
+			console.log(result?.user);
+			const payload = {
+				name: result?.user?.displayName,
+				email: result?.user?.email,
+				password: result?.user?.uid,
+				password_confirmation: result?.user?.uid,
+				device_token: result?.user?.accessToken.slice(0, 10),
+				provider: "apple",
+			};
+
+			await xoomSportUrl.post("/api/v1/signup", payload).then((res) => {
+				if (res?.data?.status) {
+					const { access_token } = res?.data;
+
+					Cookies.set("userToken", access_token, { secure: true });
+					setUserToken(access_token);
+					getUser();
+
+					toast.success("Sign In Successfully!", {
+						theme: "dark",
+					});
+
+					setAuthenticate(true);
+					setEmail("");
+					setPassword("");
+					setError("");
+					setSignUpBtn(false);
+					handleSignInClose();
+					router.push("/");
+				} else {
+					setError(res?.data?.message);
+					setUser(null);
+					setUserToken(null);
+					setSignUpBtn(false);
+				}
+			});
+		} catch (err) {
+			console.log(err);
+			setUser(null);
+			setUserToken(null);
+		}
+	};
 
 	const googleLoginHandler = async () => {
 		try {
@@ -133,19 +168,12 @@ export default function SignUp() {
 
 			await xoomSportUrl.post("/api/v1/signup", payload).then((res) => {
 				if (res?.data?.status) {
-					const { access_token, data: user } = res?.data;
-					setUserToken(access_token);
-					setUser({
-						name: user.name,
-						email: user.email,
-						provider: user.provider,
-					});
+					const { access_token } = res?.data;
+
 					Cookies.set("userToken", access_token, { secure: true });
-					Cookies.set(
-						"userInfo",
-						JSON.stringify({ name: user.name, email: user.email }),
-						{ secure: true }
-					);
+					setUserToken(access_token);
+					getUser();
+
 					toast.success("Sign In Successfully!", {
 						theme: "dark",
 					});
@@ -165,7 +193,6 @@ export default function SignUp() {
 		} catch (err) {
 			setUser(null);
 			setUserToken(null);
-			console.log(err);
 		}
 	};
 
@@ -342,6 +369,7 @@ export default function SignUp() {
 				</Button>
 				<Button
 					variant="dark w-100 mt-3 d-flex justify-content-center align-items-center"
+					onClick={appleLoginHandler}
 					disabled={appleBtn}
 				>
 					<FaApple className={styles.apple_icon} /> Continue with Apple

@@ -2,7 +2,7 @@ import styles from "@/styles/home/LeagueList.module.css";
 import getSlugify from "@/utils/getSlugify";
 import Image from "next/image";
 import Link from "next/link";
-import AdsterraBanner from "../AdsterraBanner";
+import AdsterraBanner468 from "../adsterra/AdsterraBanner468";
 
 export default function LeagueList({ heading, allLeagues }) {
 	return (
@@ -13,8 +13,9 @@ export default function LeagueList({ heading, allLeagues }) {
 				</div>
 
 				<div
-					className={`${styles.league__list} ${heading == "All Leagues" ? styles.league__list1 : ""
-						}`}
+					className={`${styles.league__list} ${
+						heading == "All Leagues" ? styles.league__list1 : ""
+					}`}
 				>
 					{allLeagues.map((allLeagues) => (
 						<div className={`${styles.league__item} `} key={allLeagues.id}>
@@ -31,7 +32,9 @@ export default function LeagueList({ heading, allLeagues }) {
 									height={25}
 									unoptimized={true}
 								/>
-								<span className={`${styles.league__title} font-helvetica-medium`}>
+								<span
+									className={`${styles.league__title} font-helvetica-medium`}
+								>
 									{allLeagues.name}
 								</span>
 							</Link>
@@ -39,9 +42,9 @@ export default function LeagueList({ heading, allLeagues }) {
 					))}
 				</div>
 			</div>
-			<AdsterraBanner />
+			<div className="mt-2">
+				<AdsterraBanner468 />
+			</div>
 		</>
-
 	);
 }
-

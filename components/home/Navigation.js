@@ -23,7 +23,6 @@ export default function Navigation({
 	const handleSignOut = () => {
 		setUser(null);
 		setUserToken(null);
-		Cookies.remove("userInfo", { secure: true });
 		Cookies.remove("userToken", { secure: true });
 		setAuthenticate(false);
 	};
@@ -154,8 +153,10 @@ export default function Navigation({
 																{user?.subscription_name}
 															</Badge>
 
-															{user?.subscription_name.toLowerCase() !=
-															"lifetime" ? (
+															{!(
+																user?.subscription_duration_type == "year" &&
+																user?.subscription_duration > 1
+															) ? (
 																<span className="text-muted">
 																	{Math.abs(
 																		moment().diff(

@@ -7,3 +7,17 @@
 	width: 225px;
 	height: 100px;
 }
+
+.text__container {
+	font-size: 17px;
+}
+
+.btn_color {
+	background-color: #fb0405;
+}
+
+.spinner__border {
+	border: 0;
+	width: 20px;
+	margin-right: 5px;
+}

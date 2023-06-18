@@ -1,6 +1,6 @@
 import FavoriteList from "@/components/favorites/FavoriteList";
 import Layout from "@/components/Layout";
-import axios from "axios";
+import { xoomSportUrl } from "@/utils/api/getAxios";
 import cookie from "cookie";
 
 export default function Favorites({ trendingNewsPost, userToken }) {
@@ -23,14 +23,13 @@ export async function getServerSideProps(context) {
 		userToken = cookie.parse(cookies).userToken;
 	}
 
-	const res = await axios.post(`https://xoomsport.com/api/v1/news`, {
-		method: "POST",
-		api_key: process.env.NEXT_PUBLIC_XOOMSPORT_API_TOKEN,
-	});
+	const trendingNewsPost = await xoomSportUrl
+		.post("/api/v1/news")
+		.then((res) => res?.data?.news);
 
 	return {
 		props: {
-			trendingNewsPost: res.data.news,
+			trendingNewsPost,
 			userToken: userToken ?? null,
 		},
 	};

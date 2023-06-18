@@ -115,10 +115,11 @@ export default function WatchDetails({
 										<Button
 											value={item.stream_url}
 											onClick={handleChange}
-											className={`${activeButton === item.stream_title
-												? styles.buttonactive
-												: ""
-												} text-white target bg-none border-0`}
+											className={`${
+												activeButton === item.stream_title
+													? styles.buttonactive
+													: ""
+											} text-white target bg-none border-0`}
 										>
 											{item.stream_title}
 										</Button>
@@ -156,7 +157,6 @@ export default function WatchDetails({
 						src="//pl19705711.highrevenuegate.com/adc776e4feb8fe47f8b01cad883134cf/invoke.js"
 					></Script>
 					<div id="container-adc776e4feb8fe47f8b01cad883134cf"></div>
-
 					{filtered.length == 0 ? (
 						""
 					) : (
@@ -352,6 +352,7 @@ export async function getServerSideProps(context) {
 		method: "POST",
 		api_key: process.env.NEXT_PUBLIC_XOOMSPORT_API_TOKEN,
 	});
+
 	const sources = await axios.post(
 		`http://xoomsport.com/api/v1/streaming_sources/${context.params.live_id}`,
 		{
@@ -359,6 +360,7 @@ export async function getServerSideProps(context) {
 			api_key: process.env.NEXT_PUBLIC_XOOMSPORT_API_TOKEN,
 		}
 	);
+
 	return {
 		props: {
 			liveMatches: res.data,

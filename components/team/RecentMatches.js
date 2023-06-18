@@ -51,7 +51,7 @@ export default function RecentMatches({ singleTeam }) {
 				});
 			}
 		} else {
-			toast.warn("Please Signin Before Add Favorites!", {
+			toast.info("Please Signin Before Add Favorites!", {
 				theme: "dark",
 			});
 		}
@@ -198,7 +198,7 @@ export default function RecentMatches({ singleTeam }) {
 					"filter: invert(35%) sepia(92%) saturate(5572%) hue-rotate(349deg) brightness(87%) contrast(136%)";
 			}
 		} else {
-			toast.warn("Please Login then Add to Favorite!", {
+			toast.info("Please Login then Add to Favorite!", {
 				theme: "dark",
 			});
 		}

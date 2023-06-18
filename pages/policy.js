@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 
-export default function Terms({ settings }) {
+export default function Policy({ settings }) {
 	const [isRender, setIsRender] = useState(false);
 
 	useEffect(() => {
@@ -16,7 +16,7 @@ export default function Terms({ settings }) {
 	return (
 		<>
 			<Head>
-				<title>XOOMSPORT - TERMS & CONDITIONS</title>
+				<title>XOOMSPORT - PRIVACY & POLICY</title>
 			</Head>
 			<div className={styles.page__heading}>
 				<Container className="pt-5 pb-4">
@@ -30,7 +30,7 @@ export default function Terms({ settings }) {
 								sizes="100vw"
 							/>
 							<h4 className="mt-4 border-bottom text-center">
-								Terms & Conditions
+								Privacy & Policy
 							</h4>
 						</div>
 					</div>
@@ -39,7 +39,7 @@ export default function Terms({ settings }) {
 			<Container className="w-75 mt-5">
 				<div className={styles.text__container}>
 					{isRender && (
-						<Interweave content={settings.terms} containerTagName="div" />
+						<Interweave content={settings.policy} containerTagName="div" />
 					)}
 				</div>
 			</Container>

@@ -2,6 +2,7 @@ import styles from "@/styles/mobile/MobilePopUp.module.css";
 import { toast } from "react-toastify";
 
 export default function MobilePopUp({ text }) {
+	alert("ok");
 	if (window.innerWidth < "576") {
 		return (
 			<div>
@@ -11,7 +12,7 @@ export default function MobilePopUp({ text }) {
 			</div>
 		);
 	} else {
-		toast.warn(text, {
+		toast.info(text, {
 			theme: "dark",
 		});
 	}

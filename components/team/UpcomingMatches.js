@@ -51,7 +51,7 @@ export default function UpcomingMatches({ singleTeam }) {
 				});
 			}
 		} else {
-			toast.warn("Please Signin Before Add Favorites!", {
+			toast.info("Please Signin Before Add Favorites!", {
 				theme: "dark",
 			});
 		}

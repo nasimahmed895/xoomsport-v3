@@ -57,7 +57,7 @@ export default function FullLeagueTable({ season_id }) {
 		return null;
 	};
 	if (isError) {
-		toast.warn("Please check your internet connetion or try again!", {
+		toast.info("Please check your internet connetion or try again!", {
 			theme: "dark",
 		});
 	}

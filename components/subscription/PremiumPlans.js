@@ -169,7 +169,7 @@ export default function PremiumPlans() {
 					</ul>
 					<div className={styles.side__image}>
 						<Image
-							src="/static/images/not_found/artboard4.png"
+							src="/artboard4.png"
 							width={0}
 							height={0}
 							sizes="100vw"

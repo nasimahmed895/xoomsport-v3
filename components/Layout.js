@@ -1,13 +1,12 @@
 import styles from "@/styles/Layout.module.css";
 import axios, { xoomSportUrl } from "@/utils/api/getAxios";
 import Head from "next/head";
+import Script from "next/script";
 import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useQuery } from "react-query";
-// import { ReactQueryDevtoolds } from "react-query/devtools";
-import Script from "next/script";
 import { ToastContainer, toast } from "react-toastify";
-import HeadingAds from "./HeadingAds";
+import HeadingAds from "./adsterra/HeadingAds";
 import ChangePasswordModalForm from "./auth/ChangePasswordModalForm";
 import ForgetPasswordModalForm from "./auth/ForgetPasswordModalForm";
 import OTPModalForm from "./auth/OTPModalForm";
@@ -28,7 +27,6 @@ export default function Layout({
 	title,
 	trendingNewsPost,
 	userToken,
-	userInfo,
 }) {
 	const [showSignIn, setShowSignIn] = useState(false);
 	const [showSignUp, setShowSignUp] = useState(false);
@@ -80,18 +78,6 @@ export default function Layout({
 		}
 	);
 
-	// useEffect(() => {
-	// 	const script = document.createElement("script");
-	// 	script.src =
-	// 		"//pl19694061.highrevenuegate.com/47/61/88/47618882aca23426018cf1dd2b37db5d.js";
-	// 	script.type = "text/javascript";
-	// 	document.head.appendChild(script);
-
-	// 	return () => {
-	// 		document.head.removeChild(script);
-	// 	};
-	// }, []);
-
 	// Handle Singin
 	const handleSignInClose = () => setShowSignIn(false);
 	const handleSignInShow = () => {
@@ -134,14 +120,14 @@ export default function Layout({
 		if (allLeagues?.data?.data !== undefined) {
 			allLeagues?.data?.data.sort((a, b) => a.name.localeCompare(b.name));
 		} else {
-			toast.warn("Please check your internet connetion or try again!", {
+			toast.info("Please check your internet connetion or try again!", {
 				theme: "dark",
 			});
 		}
 	}
 
 	if (isError) {
-		toast.warn("Please check your internet connetion or try again!", {
+		toast.info("Please check your internet connetion or try again!", {
 			theme: "dark",
 		});
 	}
@@ -159,20 +145,13 @@ export default function Layout({
 				setShowPremiumPlan={setShowPremiumPlan}
 			/>
 			<BottomNavigation
-				userInfo={userInfo}
 				authenticate={authenticate}
 				setAuthenticate={setAuthenticate}
 			/>
 			{/* -------- Main Content -------- */}
 
 			<Container className={`${styles.main__container}`}>
-				{/* <Script
-					async="async"
-					data-cfasync="false"
-					src="//pl19705711.highrevenuegate.com/adc776e4feb8fe47f8b01cad883134cf/invoke.js"
-				></Script>
-				<div id="container-adc776e4feb8fe47f8b01cad883134cf"></div> */}
-				<p>HeadingAds</p>
+				{/* HeadingAds */}
 				<HeadingAds />
 				<Row>
 					{fullScreen ? (
@@ -193,17 +172,15 @@ export default function Layout({
 								className={`mb-4 ${styles.left_column}`}
 							>
 								{isLoading1 ||
-									isError1 ||
-									topLeagueList?.data?.data == undefined ? (
+								isError1 ||
+								topLeagueList?.data?.data == undefined ? (
 									<LeagueListShimmer />
 								) : (
 									<>
-
 										<LeagueList
 											heading="Top Leagues"
 											allLeagues={topLeagueList?.data?.data}
 										/>
-										<br />
 									</>
 								)}
 
@@ -236,12 +213,10 @@ export default function Layout({
 									heading="Trending News"
 									trendingNewsPost={trendingNewsPost}
 								/>
-								<br />
-
 
 								{isLoading2 ||
-									isError2 ||
-									pointTable?.data?.data == undefined ? (
+								isError2 ||
+								pointTable?.data?.data == undefined ? (
 									<ShortLeagueTableShimmer />
 								) : (
 									<LeagueTable pointTableData={pointTable?.data?.data} />
@@ -300,12 +275,8 @@ export default function Layout({
 					setShowPremiumPlan={setShowPremiumPlan}
 					setShowSignIn={setShowSignIn}
 				/>
-
-				{/* <ReactQueryDevtools initialIsOpen={false} position="bottom-right" /> */}
 				<ToastContainer position="bottom-right" />
 			</Container>
-
-
 			<Script
 				type="text/javascript"
 				src="//pl19706691.highrevenuegate.com/37/89/0a/37890a5064b6650b9adfff77672a0fc4.js"

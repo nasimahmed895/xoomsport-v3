@@ -57,7 +57,7 @@ export default function MatchHeadToHead({ local_id, visitor_id }) {
 				});
 			}
 		} else {
-			toast.warn("Please Signin Before Add Favorites!", {
+			toast.info("Please Signin Before Add Favorites!", {
 				theme: "dark",
 			});
 		}

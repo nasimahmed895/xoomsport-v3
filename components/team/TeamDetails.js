@@ -56,7 +56,7 @@ export default function TeamDetails({ singleTeam, userToken }) {
 				undoRedFavorite.current.style.display = "none";
 			}
 		} else {
-			toast.warn("Please Signin Before Add Favorites!", {
+			toast.info("Please Signin Before Add Favorites!", {
 				theme: "dark",
 			});
 		}
@@ -199,7 +199,7 @@ export default function TeamDetails({ singleTeam, userToken }) {
 				undoWhiteFavorite.current.style.display = "none";
 			}
 		} else {
-			toast.warn("Please Signin Before Add Favorites!", {
+			toast.info("Please Signin Before Add Favorites!", {
 				theme: "dark",
 			});
 		}

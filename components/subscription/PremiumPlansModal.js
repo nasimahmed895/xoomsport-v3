@@ -2,6 +2,7 @@ import useAuthContext from "@/contexts/AuthContext";
 import styles from "@/styles/subscription/PremiumPlanModal.module.css";
 import { xoomSportUrl } from "@/utils/api/getAxios";
 import { stripePayment } from "@/utils/stripe/stripePayment";
+import moment from "moment";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
@@ -20,14 +21,17 @@ export default function PremiumPlansModal({
 	const couponTextRef = useRef(null);
 	const couponEnterBtnRef = useRef(null);
 	const couponCanleBtnRef = useRef(null);
-	const [activePlan, setActivePlan] = useState("yearly");
+	const [couponText, setCouponText] = useState("");
+	const [activePlanDurationType, setActivePlanDurationType] = useState("year");
+	const [activePlanDuration, setActivePlanDuration] = useState(1);
 	const [productId, setProductId] = useState(null);
 	const [subscriptionId, setSubscriptionId] = useState(null);
 	const [continueBtn, setContinueBtn] = useState(false);
 	const [upgradeBtn, setUpgradeBtn] = useState(false);
-	const [yearlySpinner, setyearlySpinner] = useState(false);
+	const [monthlySpinner, setMonthlySpinner] = useState(false);
+	const [yearlySpinner, setYearlySpinner] = useState(false);
 	const [lifetimeSpinner, setLifetimeSpinner] = useState(false);
-	const { userToken, user } = useAuthContext();
+	const { userToken, user, getUser } = useAuthContext();
 	const planRefs = useRef([]);
 
 	const { isLoading, data: subscriptions } = useQuery(
@@ -42,17 +46,30 @@ export default function PremiumPlansModal({
 		}
 	);
 
+	const selectActivePlan = (plan) => {
+		setActivePlanDuration(plan?.duration);
+		setActivePlanDurationType(plan?.duration_type);
+	};
+
 	// Use Effect for Changing Product Id
 	useEffect(() => {
 		let subscription_plan;
 		if (!isLoading) {
-			subscription_plan = subscriptions?.data?.data.filter(
-				(plan) => plan.name.toLowerCase() == activePlan
-			)[0];
+			subscription_plan = subscriptions?.data?.data?.filter((plan) => {
+				return (
+					activePlanDurationType == plan?.duration_type &&
+					activePlanDuration == plan?.duration
+				);
+			})[0];
 		}
 		setProductId(subscription_plan?.product_id);
 		setSubscriptionId(subscription_plan?.id);
-	}, [activePlan, isLoading, subscriptions?.data?.data]);
+	}, [
+		activePlanDuration,
+		activePlanDurationType,
+		isLoading,
+		subscriptions?.data?.data,
+	]);
 
 	// Handle Subscription
 	const handleGetSubscription = () => {
@@ -72,24 +89,64 @@ export default function PremiumPlansModal({
 	};
 
 	// Handle Upgration Plan
-	const handleUpgration = (selected_plan) => {
+	const handleUpgration = (duration_type, duration) => {
 		setUpgradeBtn(true);
 		setTimeout(() => {
 			setUpgradeBtn(false);
-			setyearlySpinner(false);
+			setMonthlySpinner(false);
+			setYearlySpinner(false);
 			setLifetimeSpinner(false);
 		}, 5000);
 
-		if (selected_plan == "yearly") {
-			setyearlySpinner(true);
+		if (duration_type == "month") {
+			setMonthlySpinner(true);
+		} else if (duration_type == "year" && duration == 1) {
+			setYearlySpinner(true);
 		} else {
 			setLifetimeSpinner(true);
 		}
 
-		const subscription_plan = subscriptions?.data?.data.filter(
-			(plan) => plan.name.toLowerCase() == selected_plan
-		)[0];
+		const subscription_plan = subscriptions?.data?.data?.filter((plan) => {
+			return plan.duration_type == duration_type && plan.duration == duration;
+		})[0];
 		stripePayment(subscription_plan?.product_id, subscription_plan?.id);
+	};
+
+	// Apply Coupon
+	const applyCoupon = async () => {
+		if (userToken) {
+			if (couponText.trim() === "") {
+				toast.info("Please, Enter Valid Coupon!", {
+					theme: "dark",
+				});
+			} else {
+				await xoomSportUrl
+					.post(`/api/v1/subscription_by_code`, {
+						platform: "web",
+						code: couponText,
+					})
+					.then((res) => {
+						if (res.data.result === false) {
+							toast.warn("Invalid or Expired Coupon!", {
+								theme: "dark",
+							});
+						} else {
+							getUser();
+							setCouponText("");
+							setShowPremiumPlan(false);
+							toast.success(`You Coupon Package Activated!`, {
+								theme: "dark",
+							});
+						}
+					});
+			}
+		} else {
+			setShowPremiumPlan(false);
+			setShowSignIn(true);
+			toast.info("Sign in Before Apply Coupon!", {
+				theme: "dark",
+			});
+		}
 	};
 
 	const showCouponField = () => {
@@ -100,6 +157,7 @@ export default function PremiumPlansModal({
 	};
 
 	const removeCouponField = () => {
+		setCouponText("");
 		couponTextRef.current.classList.remove("d-none");
 		couponInputRef.current.classList.add("d-none");
 		couponEnterBtnRef.current.classList.remove("d-none");
@@ -123,26 +181,38 @@ export default function PremiumPlansModal({
 			</Modal.Header>
 			<Modal.Body className={styles.modal__body}>
 				<div className={styles.top__header}>
-					{userToken && user?.subscription_id != 0 ? (
+					{userToken &&
+					user?.subscription_id != 0 &&
+					moment().isBefore(user?.expired_at) ? (
 						<div>
 							<div className="d-flex justify-content-center">
-								{user?.subscription_name.toLowerCase() == "monthly" ? (
+								{user?.subscription_duration_type == "month" &&
+								user?.subscription_duration == 1 ? (
 									<Image
 										src="/monthly_ball.png"
 										width={70}
 										height={70}
 										alt="Logo"
 									/>
-								) : user?.subscription_name.toLowerCase() == "yearly" ? (
+								) : user?.subscription_duration_type == "year" &&
+								  user?.subscription_duration == 1 ? (
 									<Image
 										src="/yearly_ball.png"
 										width={70}
 										height={70}
 										alt="Logo"
 									/>
-								) : (
+								) : user?.subscription_duration_type == "year" &&
+								  user?.subscription_duration > 1 ? (
 									<Image
 										src="/lifetime_ball.png"
+										width={70}
+										height={70}
+										alt="Logo"
+									/>
+								) : (
+									<Image
+										src="/daily_weekly_ball.png"
 										width={70}
 										height={70}
 										alt="Logo"
@@ -151,12 +221,18 @@ export default function PremiumPlansModal({
 							</div>
 							<div>
 								<h4
-									className={`mt-3 ${user?.subscription_name.toLowerCase() == "monthly"
-										? styles.monthly_premium
-										: user?.subscription_name.toLowerCase() == "yearly"
+									className={`mt-3 ${
+										user?.subscription_duration_type == "month" &&
+										user?.subscription_duration == 1
+											? styles.monthly_premium
+											: user?.subscription_duration_type == "year" &&
+											  user?.subscription_duration == 1
 											? styles.yearly_premium
-											: styles.lifetime_premium
-										} text-uppercase`}
+											: user?.subscription_duration_type == "year" &&
+											  user?.subscription_duration > 1
+											? styles.lifetime_premium
+											: styles.daily_weekly_premium
+									} text-uppercase`}
 								>
 									XOOMSPORT {user?.subscription_name}
 								</h4>
@@ -197,30 +273,45 @@ export default function PremiumPlansModal({
 								<div>
 									<div
 										className={
-											user?.subscription_name.toLowerCase() == "monthly"
+											user?.subscription_duration_type == "month" &&
+											user?.subscription_duration == 1
 												? styles.monthly_premium_border
-												: user?.subscription_name.toLowerCase() == "yearly"
-													? styles.yearly_premium_border
-													: styles.lifetime_premium_border
+												: user?.subscription_duration_type == "year" &&
+												  user?.subscription_duration == 1
+												? styles.yearly_premium_border
+												: user?.subscription_duration_type == "year" &&
+												  user?.subscription_duration > 1
+												? styles.lifetime_premium_border
+												: styles.daily_weekly_premium_border
 										}
 									>
-										{user?.subscription_name.toLowerCase() == "monthly" ? (
+										{user?.subscription_duration_type == "month" &&
+										user?.subscription_duration == 1 ? (
 											<Image
 												src="/monthly_ball.png"
 												width={45}
 												height={45}
 												alt="Logo"
 											/>
-										) : user?.subscription_name.toLowerCase() == "yearly" ? (
+										) : user?.subscription_duration_type == "year" &&
+										  user?.subscription_duration == 1 ? (
 											<Image
 												src="/yearly_ball.png"
 												width={45}
 												height={45}
 												alt="Logo"
 											/>
-										) : (
+										) : user?.subscription_duration_type == "year" &&
+										  user?.subscription_duration > 1 ? (
 											<Image
 												src="/lifetime_ball.png"
+												width={45}
+												height={45}
+												alt="Logo"
+											/>
+										) : (
+											<Image
+												src="/daily_weekly_ball.png"
 												width={45}
 												height={45}
 												alt="Logo"
@@ -238,14 +329,74 @@ export default function PremiumPlansModal({
 								</div>
 							</div>
 
-							{user?.subscription_name.toLowerCase() != "lifetime" && (
+							{/* Check is it lifetime package or not */}
+							{!(
+								user?.subscription_duration_type == "year" &&
+								user?.subscription_duration > 1
+							) && (
 								<div className={styles.premium__restore}>
 									<p>Enlighten Plan</p>
 								</div>
 							)}
 
-							{user?.subscription_name.toLowerCase() != "yearly" &&
-								user?.subscription_name.toLowerCase() != "lifetime" && (
+							{/* Check is it monthly package or not */}
+							{!(
+								user?.subscription_duration_type == "month" &&
+								user?.subscription_duration == 1
+							) &&
+								!(
+									user?.subscription_duration_type == "year" &&
+									user?.subscription_duration == 1
+								) &&
+								!(
+									user?.subscription_duration_type == "year" &&
+									user?.subscription_duration > 1
+								) && (
+									<div className="mt-3 ms-3 mb-3 d-flex align-items-center position-relative">
+										<div>
+											<div className={styles.monthly_premium_border}>
+												<Image
+													src="/monthly_ball.png"
+													width={45}
+													height={45}
+													alt="Logo"
+												/>
+											</div>
+										</div>
+										<div>
+											<h5 className="mb-0 ms-3 text-uppercase">Xoom Monthly</h5>
+											<p className="mb-0 ms-3">
+												No Ad Interruptions, 2x Video than without Signup
+											</p>
+										</div>
+										<div className={styles.upgrade_btn}>
+											<Button
+												onClick={() => handleUpgration("month", 1)}
+												type="button"
+												className="btn btn-dark btn-sm d-flex align-items-center"
+												disabled={upgradeBtn}
+											>
+												{monthlySpinner && (
+													<FiLoader
+														style={{ color: "#fb0405", width: "20px" }}
+														className={`spinner-border ${styles.spinner__border}`}
+													/>
+												)}
+												UPGRADE
+											</Button>
+										</div>
+									</div>
+								)}
+
+							{/* Check is it yearly package or not */}
+							{!(
+								user?.subscription_duration_type == "year" &&
+								user?.subscription_duration == 1
+							) &&
+								!(
+									user?.subscription_duration_type == "year" &&
+									user?.subscription_duration > 1
+								) && (
 									<div className="mt-3 ms-3 mb-3 d-flex align-items-center position-relative">
 										<div>
 											<div className={styles.yearly_premium_border}>
@@ -265,7 +416,7 @@ export default function PremiumPlansModal({
 										</div>
 										<div className={styles.upgrade_btn}>
 											<Button
-												onClick={() => handleUpgration("yearly")}
+												onClick={() => handleUpgration("year", 1)}
 												type="button"
 												className="btn btn-dark btn-sm d-flex align-items-center"
 												disabled={upgradeBtn}
@@ -282,7 +433,11 @@ export default function PremiumPlansModal({
 									</div>
 								)}
 
-							{user?.subscription_name.toLowerCase() != "lifetime" && (
+							{/* Check is it lifetime package or not */}
+							{!(
+								user?.subscription_duration_type == "year" &&
+								user?.subscription_duration > 1
+							) && (
 								<div className="mt-3 ms-3 mb-3 d-flex align-items-center position-relative">
 									<div>
 										<div className={styles.lifetime_premium_border}>
@@ -302,7 +457,7 @@ export default function PremiumPlansModal({
 									</div>
 									<div className={styles.upgrade_btn}>
 										<Button
-											onClick={() => handleUpgration("lifetime")}
+											onClick={() => handleUpgration("year", 100)}
 											type="button"
 											className="btn btn-dark btn-sm d-flex align-items-center"
 											disabled={upgradeBtn}
@@ -337,25 +492,22 @@ export default function PremiumPlansModal({
 											return (
 												<div
 													key={plan.id}
-													className={`${styles.single__plan} ${activePlan == plan?.name.toLowerCase()
-														? styles.plan__active
-														: null
-														}`}
+													className={`${styles.single__plan} ${
+														activePlanDurationType == plan?.duration_type &&
+														activePlanDuration == plan?.duration
+															? styles.plan__active
+															: null
+													}`}
 													ref={(el) => (planRefs.current[plan?.id] = el)}
-													data-product-id={plan?.product_id}
-													data-selected={
-														activePlan == plan?.name.toLowerCase() ? 1 : 0
-													}
-													onClick={() =>
-														setActivePlan(plan?.name.toLowerCase())
-													}
+													onClick={() => selectActivePlan(plan)}
 												>
 													<div className={styles.rotate_content}>
 														<p>{plan?.name}</p>
 														<span>${plan?.price}</span>
-														{plan?.name.toLowerCase() == "yearly" && (
-															<p>(Save 16%)</p>
-														)}
+														{activePlanDurationType == plan?.duration_type &&
+															activePlanDuration == plan?.duration && (
+																<p>(Save 16%)</p>
+															)}
 													</div>
 												</div>
 											);
@@ -392,16 +544,15 @@ export default function PremiumPlansModal({
 									<Form>
 										<Form.Control
 											type="text"
-											id="email"
+											id="coupon"
 											placeholder="Enter Coupon Code"
 											style={{
 												borderTopRightRadius: "5px",
 												borderBottomRightRadius: "5px",
 											}}
-											// isInvalid={errorMessage("email") ? true : false}
-											// value={email}
-											// onChange={(e) => setEmail(e.target.value)}
-											required
+											value={couponText}
+											onChange={(e) => setCouponText(e.target.value)}
+											maxLength={10}
 										/>
 									</Form>
 								</div>
@@ -413,15 +564,18 @@ export default function PremiumPlansModal({
 									<span>Enter</span>
 								</div>
 								<div className="d-flex d-none" ref={couponCanleBtnRef}>
-									<div className={styles.coupon_confirm__btn}>
+									<button
+										className={styles.coupon_confirm__btn}
+										onClick={applyCoupon}
+									>
 										<span>Confirm</span>
-									</div>
-									<div
+									</button>
+									<button
 										className={styles.coupon__btn}
 										onClick={removeCouponField}
 									>
 										<span>Cancel</span>
-									</div>
+									</button>
 								</div>
 							</div>
 
@@ -433,8 +587,12 @@ export default function PremiumPlansModal({
 							) : (
 								subscriptions?.data?.data?.map((plan) => (
 									<div
-										className={`${styles.why__join} ${plan.name.toLowerCase() == activePlan ? "" : "d-none"
-											}`}
+										className={`${styles.why__join} ${
+											activePlanDurationType == plan?.duration_type &&
+											activePlanDuration == plan?.duration
+												? ""
+												: "d-none"
+										}`}
 										key={plan?.id}
 									>
 										<ul className={styles.join_check__list}>

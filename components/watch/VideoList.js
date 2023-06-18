@@ -5,8 +5,9 @@ import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import NoDataFound from "../NoDataFound";
 
-function VideoList({ highlights }) {
+export default function VideoList({ highlights }) {
 	const [modalShow, setModalShow] = React.useState(false);
 	const [videoType, setVideoType] = React.useState();
 	const [youtubeUrl, setYoutubeUrl] = React.useState();
@@ -16,43 +17,48 @@ function VideoList({ highlights }) {
 	return (
 		<div className="video_list__container">
 			<Row className="mt-2">
-				{highlights.data.map((item) => (
-					<Col
-						key={item.id}
-						variant="primary"
-						onClick={() => (
-							setModalShow(item.id),
-							setVideoType(item.video_type),
-							setYoutubeUrl(item.youtube_url),
-							setVideoSources(item.video_sources),
-							setTeam(item.title)
-						)}
-						lg={6}
-						md={6}
-						sm={6}
-						className="mb-4 mt-1 col-6"
-					>
-						<div className="single_video__item">
-							<div className="mb-1">
-								<span className={styles.video__title}>
-									{item.title.length > 20
-										? `${item.title.substring(0, 20)}...`
-										: item.title}
-								</span>
+				{highlights?.length == 0 ? (
+					<NoDataFound data="No Highlights Available!" />
+				) : (
+					highlights?.map((item) => (
+						<Col
+							key={item.id}
+							variant="primary"
+							onClick={() => (
+								setModalShow(item.id),
+								setVideoType(item.video_type),
+								setYoutubeUrl(item.youtube_url),
+								setVideoSources(item.video_sources),
+								setTeam(item.title)
+							)}
+							lg={6}
+							md={6}
+							sm={6}
+							className="mb-4 mt-1 col-6"
+						>
+							<div className="single_video__item">
+								<div className="mb-1">
+									<span className={styles.video__title}>
+										{item.title.length > 20
+											? `${item.title.substring(0, 20)}...`
+											: item.title}
+									</span>
+								</div>
+								<div className={styles.single_video__content}>
+									<Image
+										className={styles.single_video__banner}
+										loader={() => item.thumbnail_image}
+										src={item.thumbnail_image}
+										width="300"
+										height="200"
+										alt="sport-banner"
+									/>
+								</div>
 							</div>
-							<div className={styles.single_video__content}>
-								<Image
-									className={styles.single_video__banner}
-									loader={() => item.thumbnail_image}
-									src={item.thumbnail_image}
-									width="300"
-									height="200"
-									alt="sport-banner"
-								/>
-							</div>
-						</div>
-					</Col>
-				))}
+						</Col>
+					))
+				)}
+
 				<MyVerticallyCenteredModal
 					videoType={videoType}
 					youtubeUrl={youtubeUrl}
@@ -119,5 +125,3 @@ function MyVerticallyCenteredModal(props) {
 		</Modal>
 	);
 }
-
-export default VideoList;

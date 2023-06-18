@@ -19,7 +19,7 @@ export default function MatchSummaryEvents({ match_id }) {
 	const firstHalfArray = [];
 	const secondtHalfArray = [];
 	if (isError) {
-		toast.warn("Please check your internet connetion or try again!", {
+		toast.info("Please check your internet connetion or try again!", {
 			theme: "dark",
 		});
 	}

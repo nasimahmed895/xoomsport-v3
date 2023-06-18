@@ -77,16 +77,18 @@ export default function Footer() {
 								<li className={styles.list_item}>
 									<Link
 										rel="stylesheet"
-										href="/"
+										href="/terms"
+										target="_blank"
 										className={styles.list_item_link}
 									>
-										Terms & Conditions
+										Terms of Use
 									</Link>
 								</li>
 								<li className={styles.list_item}>
 									<Link
 										rel="stylesheet"
-										href="/favorites"
+										href="/policy"
+										target="_blank"
 										className={styles.list_item_link}
 									>
 										Privacy Policy
@@ -95,7 +97,8 @@ export default function Footer() {
 								<li className={styles.list_item}>
 									<Link
 										rel="stylesheet"
-										href="/watch"
+										href="/contact"
+										target="_blank"
 										className={styles.list_item_link}
 									>
 										Contact
@@ -157,11 +160,7 @@ export default function Footer() {
 						<div className="mt-3">
 							<h6>Get The App</h6>
 							<div>
-								<Link
-									href="https://www.google.com/"
-									target="_black"
-									className={styles.iconlink}
-								>
+								<Link href="/" target="_black" className={styles.iconlink}>
 									<span className={styles.icon_outline}>
 										<Image
 											src="/apple_logo.png"

@@ -6,9 +6,7 @@ import Link from "next/link";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import AdsterraBanner2 from "../AdsterraBanner2";
-
-
+import AdsterraBanner320 from "../adsterra/AdsterraBanner320";
 export default function TrendingNews({ heading, trendingNewsPost }) {
 	const settings = {
 		dots: true,
@@ -23,7 +21,6 @@ export default function TrendingNews({ heading, trendingNewsPost }) {
 
 	return (
 		<>
-
 			<div className={`${styles.news_container} mb-3`}>
 				<div className={styles.card__heading}>
 					<h6 className={styles.card__title}>{heading}</h6>
@@ -49,7 +46,9 @@ export default function TrendingNews({ heading, trendingNewsPost }) {
 									<p className={`${styles.news_title} font-helvetica-medium`}>
 										{item.title.slice(0, 60)}...
 									</p>
-									<p className={`${styles.news_title} font-helvetica-medium m-0`}>
+									<p
+										className={`${styles.news_title} font-helvetica-medium m-0`}
+									>
 										Xoom Sport <span>{moment(item.pubDate).fromNow()}</span>
 									</p>
 								</Link>
@@ -57,11 +56,9 @@ export default function TrendingNews({ heading, trendingNewsPost }) {
 						))}
 					</Slider>
 				</div>
-
 			</div>
-			<AdsterraBanner2 />
+			<AdsterraBanner320 />
 		</>
-
 	);
 	// }
 }

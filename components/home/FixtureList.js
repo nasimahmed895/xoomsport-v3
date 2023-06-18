@@ -1,3 +1,5 @@
+import useAdsContext from "@/contexts/AdsContext";
+import useAuthContext from "@/contexts/AuthContext";
 import styles from "@/styles/home/Fixture.module.css";
 import axios, { xoomSportUrl } from "@/utils/api/getAxios";
 import getMonth from "@/utils/getMonth";
@@ -7,7 +9,7 @@ import getSlugify from "@/utils/getSlugify";
 import Cookies from "js-cookie";
 import moment from "moment";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import { Col, Row } from "react-bootstrap";
@@ -22,10 +24,106 @@ export default function FixtureList({ pickrDate }) {
 	const [loading, setLoading] = useState(true);
 	const [fixtureList, setFixtureList] = useState([]);
 	const userFavoritesRefs = useRef([]);
+	const { userToken } = useAuthContext();
+	const [windowWidth, setWindowWidth] = useState(null);
+	const { counter, setCounter } = useAdsContext();
+	const adDisplayFrequency = 2; // Show ad every 2 clicks
 
-	const { isLoading, data: favorite } = useQuery("user-favorites", async () => {
-		return await xoomSportUrl.post(`/api/v1/favorite_id`);
-	});
+	const router = useRouter();
+
+	// ads handle function
+	const openInNewTab = (
+		status = "",
+		league_name = "",
+		league_id = "",
+		team_status = "",
+		localTeam = "",
+		visitorTeam = "",
+		team_id = ""
+	) => {
+		setCounter((prev) => prev + 1);
+		if (counter % adDisplayFrequency === 0) {
+			if (status) {
+				router.push(`/league/${getSlugify(league_name)}/${league_id}`);
+			} else {
+				router.push(
+					`/match/${
+						all_status.includes(team_status) ? "details" : "preview"
+					}/${getSlugify(localTeam)}-vs-${getSlugify(visitorTeam)}/${team_id}`
+				);
+			}
+			window.open(
+				"https://www.highrevenuegate.com/gtkxb6dc1?key=c836ecdf6d651783b8d7e1b50ca1bae1"
+			);
+		} else {
+			if (status) {
+				router.push(`/league/${getSlugify(league_name)}/${league_id}`);
+			} else {
+				router.push(
+					`/match/${
+						all_status.includes(team_status) ? "details" : "preview"
+					}/${getSlugify(localTeam)}-vs-${getSlugify(visitorTeam)}/${team_id}`
+				);
+			}
+		}
+	};
+
+	// user-favorites
+	const {
+		isLoading,
+		data: favorite,
+		refetch,
+	} = useQuery(
+		"user-favorites",
+		async () => {
+			return await xoomSportUrl.post(`/api/v1/favorite_id`);
+		},
+		{
+			enabled: userToken ? true : false,
+		}
+	);
+
+	// use userToken
+	useEffect(() => {
+		if (userToken) {
+			refetch();
+		}
+		setWindowWidth(window.innerWidth);
+	}, [userToken, refetch]);
+
+	useEffect(() => {
+		setLoading(true);
+
+		if (pickrDate) {
+			axios
+				.get(
+					`fixtures/date/${pickrDate}?include=localTeam,visitorTeam,league,venue,referee`
+				)
+				.then((res) => {
+					setFixtureList(res?.data?.data);
+					setLoading(false);
+				})
+				.catch((err) => {
+					setLoading(true);
+					toast.info("Please check your internet connetion or try again!", {
+						theme: "dark",
+					});
+				});
+		} else {
+			axios
+				.get(`livescores?include=localTeam,visitorTeam,league,venue,referee`)
+				.then((res) => {
+					setFixtureList(res?.data?.data);
+					setLoading(false);
+				})
+				.catch((err) => {
+					setLoading(true);
+					toast.info("Please check your internet connetion or try again!", {
+						theme: "dark",
+					});
+				});
+		}
+	}, [pickrDate]);
 
 	// Handle User favorite
 	const handleUserfavorite = (
@@ -35,7 +133,7 @@ export default function FixtureList({ pickrDate }) {
 		provider = "",
 		team = ""
 	) => {
-		if (Cookies.get("userToken")) {
+		if (userToken) {
 			if (status) {
 				userFavoritesRefs.current[i + "inactive"].style.display = "none";
 				userFavoritesRefs.current[i + "active"].style.display = "block";
@@ -53,11 +151,12 @@ export default function FixtureList({ pickrDate }) {
 				});
 			}
 		} else {
-			// toast.warn("Please Signin Before Add Favorites!", {
-			// 	theme: "dark",
-			// });
-			setToaste(true);
-			setTimeout(() => setToaste(false), 4000);
+			// <MobilePopUp text="Please Signin Before Add Favorites!" />;
+			toast.info("Please Signin Before Add Favorites!", {
+				theme: "dark",
+			});
+			// setToaste(true);
+			// setTimeout(() => setToaste(false), 4000);
 		}
 	};
 
@@ -168,44 +267,11 @@ export default function FixtureList({ pickrDate }) {
 		}
 	};
 
-	useEffect(() => {
-		setLoading(true);
-
-		if (pickrDate) {
-			axios
-				.get(
-					`fixtures/date/${pickrDate}?include=localTeam,visitorTeam,league,venue,referee`
-				)
-				.then((res) => {
-					setFixtureList(res?.data?.data);
-					setLoading(false);
-				})
-				.catch((err) => {
-					setLoading(true);
-					toast.warn("Please check your internet connetion or try again!", {
-						theme: "dark",
-					});
-				});
-		} else {
-			axios
-				.get(`livescores?include=localTeam,visitorTeam,league,venue,referee`)
-				.then((res) => {
-					setFixtureList(res?.data?.data);
-					setLoading(false);
-				})
-				.catch((err) => {
-					setLoading(true);
-					toast.warn("Please check your internet connetion or try again!", {
-						theme: "dark",
-					});
-				});
-		}
-	}, [pickrDate]);
-
 	const live_status = ["LIVE", "HT", "ET", "BREAK"];
 	const finishe_status = ["FT", "AET", "FT_PEN"];
 	const all_status = [...live_status, ...finishe_status];
 	let groupBy = {};
+
 	if (fixtureList !== undefined) {
 		const live_matches = fixtureList.filter((match) =>
 			live_status.includes(match?.time?.status)
@@ -225,7 +291,7 @@ export default function FixtureList({ pickrDate }) {
 			}
 		}
 	} else {
-		toast.warn("Please check your internet connetion or try again!", {
+		toast.info("Please check your internet connetion or try again!", {
 			theme: "dark",
 		});
 	}
@@ -291,21 +357,21 @@ export default function FixtureList({ pickrDate }) {
 		} else {
 			return (
 				<>
-					{toaste ? (
-						<MobilePopUp
-							text={"To Add Favorite, please login or register first."}
-						/>
-					) : (
-						""
+					{toaste && (
+						<MobilePopUp text={"Please Signin Before Add Favorites!"} />
 					)}
 					{Object.keys(groupBy).map((item, i) => {
 						return (
 							<div key={i}>
-								<Link
-									href={`/league/${getSlugify(
-										groupBy[item][0]?.league?.data?.name
-									)}/${groupBy[item][0]?.league?.data?.id}`}
-									className="text-dec-none"
+								<a
+									className="text-dec-none cursor_pointer"
+									onClick={() =>
+										openInNewTab(
+											true,
+											groupBy[item][0]?.league?.data?.name,
+											groupBy[item][0]?.league?.data?.id
+										)
+									}
 								>
 									<div className={`${styles.fixture__heading} rotate_main`}>
 										<h6 className={styles.fixture__title}>
@@ -313,23 +379,28 @@ export default function FixtureList({ pickrDate }) {
 										</h6>
 										<FiChevronRight className={styles.right_arrow__icon} />
 									</div>
-								</Link>
+								</a>
 								{groupBy[item].map((team, index) => (
 									<div key={team.id} className={styles.fixtures__wrapper}>
-										<Link
-											href={`/match/${all_status.includes(groupBy[item][index]?.time?.status)
-												? "details"
-												: "preview"
-												}/${getSlugify(
-													team?.localTeam?.data?.name
-												)}-vs-${getSlugify(team?.visitorTeam?.data?.name)}/${team?.id
-												}`}
+										<a
 											key={team?.id}
-											className="text-dec-none"
+											className="text-dec-none cursor_pointer"
+											onClick={() =>
+												openInNewTab(
+													false,
+													"",
+													"",
+													groupBy[item][index]?.time?.status,
+													team?.localTeam?.data?.name,
+													team?.visitorTeam?.data?.name,
+													team?.id
+												)
+											}
 										>
 											<div
-												className={`${styles.fixture__content} rotate_main ${index > 0 ? "mt-1" : ""
-													}`}
+												className={`${styles.fixture__content} rotate_main ${
+													index > 0 ? "mt-1" : ""
+												}`}
 											>
 												<Row
 													className={`w-100 align-items-center ${styles.fixture__content_row} ${styles.rotate_main_row}`}
@@ -407,7 +478,7 @@ export default function FixtureList({ pickrDate }) {
 													</Col>
 												</Row>
 											</div>
-										</Link>
+										</a>
 										<div id="Favorite_item">
 											{checkUserFavorite(team?.id, team)}
 										</div>

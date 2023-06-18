@@ -1,16 +1,34 @@
+import useAdsContext from "@/contexts/AdsContext";
 import styles from "@/styles/news/NewsList.module.css";
 import slugConvert from "@/utils/getSlugConvert";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/router";
 import Script from "next/script";
 
 export default function NewsList({ allNews }) {
-	function mobile() { }
+	// ads handle function
+	const router = useRouter();
+	const { counter, setCounter } = useAdsContext();
+	const adDisplayFrequency = 2; // Show ad every 2 clicks
+
+	const openInNewTab = (url) => {
+		setCounter((prev) => prev + 1);
+		if (counter % adDisplayFrequency === 1) {
+			// href={`/news/${slugConvert(allNews[0].link)}`}
+			router.push(url);
+			window.open(
+				"https://www.highrevenuegate.com/gtkxb6dc1?key=c836ecdf6d651783b8d7e1b50ca1bae1"
+			);
+		} else {
+			router.push(url);
+		}
+	};
+	// ads handle function
 
 	return (
 		<div className="news_list__container">
 			<div className="responsive_top"></div>
-			<Link href={`/news/${slugConvert(allNews[0].link)}`}>
+			<a onClick={() => openInNewTab(`/news/${slugConvert(allNews[0].link)}`)}>
 				<div className={styles.exclusive_news__container}>
 					<div className={styles.thumbnail___wrapper}>
 						<Image
@@ -29,8 +47,7 @@ export default function NewsList({ allNews }) {
 						<span className={styles.news__desc}>{allNews[0].description}</span>
 					</div>
 				</div>
-			</Link>
-			<p>Native Banner</p>
+			</a>
 			<Script
 				async="async"
 				data-cfasync="false"
@@ -46,9 +63,8 @@ export default function NewsList({ allNews }) {
 							className={`${styles.single_news__item} card_item`}
 							key={index}
 						>
-							<Link
-								href={`/news/${slugConvert(news.link)}`}
-								className="text-dec-none"
+							<a
+								onClick={() => openInNewTab(`/news/${slugConvert(news.link)}`)}
 							>
 								<div>
 									<Image
@@ -65,7 +81,7 @@ export default function NewsList({ allNews }) {
 										{news.title}
 									</span>
 								</div>
-							</Link>
+							</a>
 						</div>
 					))}
 			</div>

@@ -8,10 +8,11 @@ function VideoPleyer({ url }) {
 			<ReactPlayer
 				url={url}
 				playing={true}
-				width="640"
-				height="70vh"
+				width={100}
+				height={100}
 				controls={true}
 				quality={true}
+				className="videopleyer"
 			/>
 		</div>
 	);

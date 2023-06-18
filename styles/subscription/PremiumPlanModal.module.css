@@ -156,6 +156,7 @@
 	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
 	cursor: pointer;
 	text-transform: uppercase;
+	border: 0;
 }
 
 .coupon_confirm__btn {
@@ -166,6 +167,7 @@
 	font-family: "HelveticaNeue-Medium-t", "HelveticaNeue-Medium-w";
 	cursor: pointer;
 	text-transform: uppercase;
+	border: 0;
 }
 
 .why__join {
@@ -278,6 +280,16 @@
 
 .lifetime_premium_border {
 	border: 2px solid #e7be27;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.daily_weekly_premium {
+	color: #dddddd;
+}
+
+.daily_weekly_premium_border {
+	border: 2px solid #dddddd;
 	border-radius: 5px;
 	padding: 5px;
 }

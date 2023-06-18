@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import WatchList from "@/components/watch/WatchList";
-import axios from "axios";
+import { xoomSportUrl } from "@/utils/api/getAxios";
 import cookie from "cookie";
 
 export default function Watch({
@@ -28,28 +28,23 @@ export async function getServerSideProps(context) {
 		userToken = cookie.parse(cookies).userToken ?? null;
 	}
 
-	const res = await axios.post(`https://xoomsport.com/api/v1/news`, {
-		method: "POST",
-		api_key: process.env.NEXT_PUBLIC_XOOMSPORT_API_TOKEN,
-	});
+	const trendingNewsPost = await xoomSportUrl
+		.post("/api/v1/news")
+		.then((res) => res?.data?.news);
 
-	const highlights = await axios.post(
-		`https://xoomsport.com/api/v1/highlights`,
-		{
-			method: "POST",
-			api_key: process.env.NEXT_PUBLIC_XOOMSPORT_API_TOKEN,
-		}
-	);
+	const highlights = await xoomSportUrl
+		.post("/api/v1/highlights")
+		.then((res) => res?.data?.data);
 
-	const live = await axios.post(`https://xoomsport.com/api/v1/live_matches`, {
-		method: "POST",
-		api_key: process.env.NEXT_PUBLIC_XOOMSPORT_API_TOKEN,
-	});
+	const liveMatches = await xoomSportUrl
+		.post("/api/v1/live_matches")
+		.then((res) => res?.data?.data);
+
 	return {
 		props: {
-			trendingNewsPost: res.data.news,
-			liveMatches: live.data,
-			highlights: highlights.data,
+			trendingNewsPost,
+			liveMatches,
+			highlights,
 			userToken: userToken ?? null,
 		},
 	};

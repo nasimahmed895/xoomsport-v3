@@ -46,7 +46,7 @@ export default function TeamOverview({ singleTeam, userToken }) {
 				undoBlackFavorite.current.style.display = "none";
 			}
 		} else {
-			toast.warn("Please Signin Before Add Favorites!", {
+			toast.info("Please Signin Before Add Favorites!", {
 				theme: "dark",
 			});
 		}

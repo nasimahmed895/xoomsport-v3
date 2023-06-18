@@ -1,3 +1,4 @@
+import { AdsProvider } from "@/contexts/AdsContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import "@/styles/globals.css";
 import "@/styles/nProgressBar.css";
@@ -37,7 +38,9 @@ export default function App({ Component, pageProps: { ...pageProps } }) {
 				<link rel="icon" href="/static/images/logo.png" />
 			</Head>
 			<AuthProvider>
-				<Component {...pageProps} />
+				<AdsProvider>
+					<Component {...pageProps} />
+				</AdsProvider>
 			</AuthProvider>
 		</QueryClientProvider>
 	);
