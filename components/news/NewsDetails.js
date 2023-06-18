@@ -51,6 +51,10 @@ export default function NewsDetails({ newsDetailsPost }) {
 					))}
 				</div>
 			</div>
+			<div m-2>
+				AdsterraBanner300
+				<AdsterraBanner600 />
+			</div>
 		</div>
 
 	);
