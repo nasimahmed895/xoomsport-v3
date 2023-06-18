@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 export default function AdsterraBanner600() {
-	const banner2 = useRef();
+	const bannerRef = useRef(null); // Rename the ref to bannerRef
 
 	useEffect(() => {
 		const atOptions = {
@@ -11,21 +11,23 @@ export default function AdsterraBanner600() {
 			width: 100,
 			params: {},
 		};
-		if (banner2.current && !banner2.current.firstChild) {
+
+		if (bannerRef.current && !bannerRef.current.firstChild) {
 			const conf = document.createElement("script");
 			const script = document.createElement("script");
 			script.type = "text/javascript";
 			script.src = `//www.profitabledisplaynetwork.com/${atOptions.key}/invoke.js`;
 			conf.innerHTML = `atOptions = ${JSON.stringify(atOptions)}`;
-			banner2.current.append(conf);
-			banner2.current.append(script);
+			bannerRef.current.appendChild(conf); // Use appendChild instead of append
+			bannerRef.current.appendChild(script); // Use appendChild instead of append
 		}
-	}, [banner2]);
+	}, []); // Removed bannerRef from the dependency array
+
 	return (
 		<div
 			// Banner 160x600
-			className=" d-grid  justify-content-center align-items-center text-white text-center"
-			ref={banner2}
+			className="d-grid justify-content-center align-items-center text-white text-center"
+			ref={bannerRef}
 		></div>
 	);
 }
