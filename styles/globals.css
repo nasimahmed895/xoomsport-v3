@@ -534,9 +534,6 @@ html body div a img {
   width: 100%;
 }
 
-.headingads iframe a img {
-  width: revert-layer !important;
-}
 .headingads iframe {
   width: revert-layer !important;
   margin-top: 17px;
