@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 export default function AdsterraBanner600() {
-	const bannerRef = useRef(null); // Rename the ref to bannerRef
+	const banner2 = useRef();
 
 	useEffect(() => {
 		const atOptions = {
@@ -11,23 +11,21 @@ export default function AdsterraBanner600() {
 			width: 100,
 			params: {},
 		};
-		console.log(bannerRef.current);
-		// if (bannerRef.current) {
-		const conf = document.createElement("script");
-		const script = document.createElement("script");
-		script.type = "text/javascript";
-		script.src = `//www.profitabledisplaynetwork.com/${atOptions.key}/invoke.js`;
-		conf.innerHTML = `atOptions = ${JSON.stringify(atOptions)}`;
-		bannerRef.current.appendChild(conf); // Use appendChild instead of append
-		bannerRef.current.appendChild(script); // Use appendChild instead of append
-		// }
-	}, []); // Removed bannerRef from the dependency array
-
+		if (banner2.current && !banner2.current.firstChild) {
+			const conf = document.createElement("script");
+			const script = document.createElement("script");
+			script.type = "text/javascript";
+			script.src = `//www.profitabledisplaynetwork.com/${atOptions.key}/invoke.js`;
+			conf.innerHTML = `atOptions = ${JSON.stringify(atOptions)}`;
+			banner2.current.append(conf);
+			banner2.current.append(script);
+		}
+	}, [banner2]);
 	return (
 		<div
 			// Banner 160x600
-			// className="d-grid justify-content-center align-items-center text-white text-center"
-			ref={bannerRef}
+			className=" ads d-grid  justify-content-center align-items-center text-white text-center"
+			ref={banner2}
 		></div>
 	);
 }

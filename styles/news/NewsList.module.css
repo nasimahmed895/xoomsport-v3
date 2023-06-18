@@ -157,6 +157,7 @@
 .adscontent {
   display: flex;
 }
+
 @media screen and (min-width: 576px) {
   .single_video__banner {
     height: auto;
@@ -165,5 +166,10 @@
   .news_details__container {
     width: 75%;
     margin: auto;
+  }
+}
+@media screen and (max-width: 991px) {
+  .adswrapper {
+    display: none;
   }
 }

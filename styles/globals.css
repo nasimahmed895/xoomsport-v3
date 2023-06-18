@@ -536,7 +536,8 @@ body div {
 }
 .headingads iframe {
   width: revert-layer !important;
-  margin-top: 17px;
+  margin-top: 50px;
+  margin-bottom: -20px;
 }
 #atContainer-c4fb4f68e55a97fb9d2e3a15b766087c a img {
   width: 100% auto !important;

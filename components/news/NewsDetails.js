@@ -10,7 +10,7 @@ export default function NewsDetails({ newsDetailsPost }) {
 
 	return (
 		<div className={`${styles.adscontent}`}>
-			<div className="m-2">
+			<div className={styles.adswrapper}>
 				AdsterraBanner600
 				<AdsterraBanner600 />
 			</div>
@@ -51,7 +51,7 @@ export default function NewsDetails({ newsDetailsPost }) {
 					))}
 				</div>
 			</div>
-			<div m-2>
+			<div className={styles.adswrapper}>
 				AdsterraBanner300
 				<AdsterraBanner600 />
 			</div>
