@@ -566,6 +566,6 @@ a {
 @media screen and (max-width: 576px) {
   .videopleyer {
     width: 100% !important;
-    height: 50vh !important;
+    height: auto !important;
   }
 }
