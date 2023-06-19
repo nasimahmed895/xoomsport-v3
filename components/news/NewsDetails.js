@@ -12,7 +12,10 @@ export default function NewsDetails({ newsDetailsPost }) {
 		<div className={`${styles.adscontent}`}>
 			<div className={styles.adswrapper}>
 				AdsterraBanner600
-				<AdsterraBanner600 />
+
+				<div style={{ width: "160px", height: "600px", border: "1px solid red" }}>
+					<AdsterraBanner600 />
+				</div>
 			</div>
 			<div className={`${styles.news_details__container}`}>
 				<div className="fixt_top_content">
@@ -53,7 +56,11 @@ export default function NewsDetails({ newsDetailsPost }) {
 			</div>
 			<div className={styles.adswrapper}>
 				AdsterraBanner300
-				<AdsterraBanner600 />
+				<div style={{ width: "160px", height: "600px", border: "1px solid red" }}>
+					<AdsterraBanner600 />
+
+				</div>
+
 			</div>
 		</div>
 
